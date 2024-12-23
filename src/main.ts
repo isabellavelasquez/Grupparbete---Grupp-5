@@ -1,4 +1,3 @@
+import "./style.css";
 import { createProductsHTML } from './htmlHelpers'
-import './style.css'
 
-createProductsHTML();
