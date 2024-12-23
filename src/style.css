@@ -112,6 +112,9 @@ button {
   height: 24px;
   box-shadow: 3px 3px 7px rgb(120, 118, 118);
 }
+.inputStyle {
+  font-style: italic;
+}
 .categorys {
   list-style-type: none;
   display: flex;

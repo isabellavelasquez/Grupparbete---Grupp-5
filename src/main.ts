@@ -5,7 +5,11 @@ const h1 = document.getElementById("webShopName");
 if (h1) {
   h1.innerHTML = "Our Cool Webshop";
 }
-
+const input = document.getElementById("searchInput");
+if (input) {
+  (input as HTMLInputElement).placeholder = "Sök efter vara..";
+}
+input?.classList.add("inputStyle");
 document.getElementById("searchBar")?.addEventListener("submit", (e) => {
   e.preventDefault();
 });
