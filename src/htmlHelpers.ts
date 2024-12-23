@@ -1,6 +1,7 @@
 import { Product } from "./Models/Product";
+import { addToCart } from "./services.ts/cartService";
 
-const products: Product[]  = [
+export const products: Product[]  = [
     new Product("Shirt", 100,"assets/products/Blue shirt.png", "Blue Shirt", "abc123", false),
     new Product("Red dress", 250, "assets/products/Red dress.png", "Red Dress", "abc124", false),
     new Product("Boots", 300, "assets/products/Boots.png", "Boots", "abc125", false), 
@@ -9,19 +10,31 @@ const products: Product[]  = [
 
 export const createProductsHTML = () => {
     products.forEach(product => {
+        const productDiv = document.createElement("div");
+        productDiv.id = "productContainer";
 
         const image = document.createElement("img");
-        document.getElementById("productsContainer")?.appendChild(image);
         image.src = product.imgSrc;
         image.alt = product.imgAlt;
         
         const title = document.createElement("h2");
-        document.getElementById("productsContainer")?.appendChild(title);
         (title as HTMLHeadingElement).innerHTML = product.title;
         
         const price = document.createElement("p");
-        document.getElementById("productsContainer")?.appendChild(price);
         price.innerHTML = String(product.price);
 
+        const quickAddButton = document.createElement("button");
+        quickAddButton.innerHTML = "Add to cart";
+        quickAddButton.id = "qickAddButton";
+
+        productDiv.append(image, title, price, quickAddButton);
+
+        document.getElementById("productsContainer")?.appendChild(productDiv);
+
+        quickAddButton.addEventListener("click", () => {
+            addToCart(product);
+        })
+
     });
+    
 }
