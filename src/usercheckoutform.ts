@@ -6,6 +6,7 @@ const userField = document.createElement("article");
 userField.id = "user-field";
 const formUser = document.createElement("form");
 formUser.id = "user-form";
+
 //billing field
 const billingField = document.createElement("article");
 billingField.id = "billing-field";
@@ -60,11 +61,68 @@ postAddressInput.type = "text";
 postAddressInput.name = "post-address";
 postAddressInput.placeholder = "Post Address";
 
-// Append
+// Credit card details article
+const creditCardDetails = document.createElement("article");
+creditCardDetails.id = "credit-card-details";
+const formCreditCard = document.createElement("form");
+formCreditCard.id = "credit-card-form";
+
+// First name input
+const ccFirstNameInput = document.createElement("input");
+ccFirstNameInput.type = "text";
+ccFirstNameInput.name = "cc-firstname";
+ccFirstNameInput.placeholder = "First Name";
+
+// Last name input
+const ccLastNameInput = document.createElement("input");
+ccLastNameInput.type = "text";
+ccLastNameInput.name = "cc-lastname";
+ccLastNameInput.placeholder = "Last Name";
+
+// Credit card number input
+const ccNumberInput = document.createElement("input");
+ccNumberInput.type = "text";
+ccNumberInput.name = "cc-number";
+ccNumberInput.placeholder = "Credit Card Number";
+
+// Expiration date input
+const ccExpirationDateInput = document.createElement("input");
+ccExpirationDateInput.type = "text";
+ccExpirationDateInput.name = "cc-expiration-date";
+ccExpirationDateInput.placeholder = "Expiration Date";
+
+// CVV code input
+const ccCvvInput = document.createElement("input");
+ccCvvInput.type = "text";
+ccCvvInput.name = "cc-cvv";
+ccCvvInput.placeholder = "CVV Code";
+
+// Zip code input
+const ccZipCodeInput = document.createElement("input");
+ccZipCodeInput.type = "text";
+ccZipCodeInput.name = "cc-zip-code";
+ccZipCodeInput.placeholder = "Zip Code";
+
+// Appends
 formUser.appendChild(nameInput);
 formUser.appendChild(lastNameInput);
 formUser.appendChild(emailInput);
-// Append the form to the section
+formBilling.appendChild(billingAddressInput);
+formBilling.appendChild(billingAddressLine2Input);
+formBilling.appendChild(countryInput);
+formBilling.appendChild(cityInput);
+formBilling.appendChild(postAddressInput);
+creditCardDetails.appendChild(ccFirstNameInput);
+creditCardDetails.appendChild(ccLastNameInput);
+creditCardDetails.appendChild(ccNumberInput);
+creditCardDetails.appendChild(ccExpirationDateInput);
+creditCardDetails.appendChild(ccCvvInput);
+creditCardDetails.appendChild(ccZipCodeInput);
+// Append the forms to the sections
 userField.appendChild(formUser);
+billingField.appendChild(formBilling);
+creditCardDetails.appendChild(formCreditCard);
 
 section.appendChild(userField);
+section.appendChild(billingField);
+section.appendChild(creditCardDetails);
