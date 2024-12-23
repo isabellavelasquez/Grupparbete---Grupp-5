@@ -1,8 +1,9 @@
-export class Products {
+export class Product {
     constructor (
         public title:string, 
-        public img:HTMLImageElement, 
         public price:number, 
+        public imgSrc:string,
+        public imgAlt:string,
         public id:string, 
         public isInCart:boolean, 
     ) {}
