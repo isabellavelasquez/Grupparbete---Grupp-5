@@ -1,4 +1,6 @@
 import "./style.css";
+import { createProductsHTML } from './htmlHelpers'
+
 
 // header
 const h1 = document.getElementById("webShopName");
@@ -28,3 +30,7 @@ categoryContainer.appendChild(firstCategory);
 categoryContainer.appendChild(secondCategory);
 categoryContainer.appendChild(thirdCategory);
 navbar?.appendChild(categoryContainer);
+
+
+createProductsHTML();
+
