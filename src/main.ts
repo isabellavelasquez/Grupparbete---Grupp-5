@@ -12,6 +12,7 @@ document.getElementById("searchBar")?.addEventListener("submit", (e) => {
 
 const navbar = document.getElementById("navbar");
 const categoryContainer = document.createElement("ul");
+categoryContainer.classList.add("categorys");
 const firstCategory = document.createElement("li");
 firstCategory.innerHTML = "Man";
 const secondCategory = document.createElement("li");
