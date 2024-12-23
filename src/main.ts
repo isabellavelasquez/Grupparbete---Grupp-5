@@ -1,6 +1,5 @@
 import "./style.scss";
-import { createProductsHTML } from './htmlHelpers'
-
+import { createProductsHTML } from "./htmlHelpers";
 
 // header
 const h1 = document.getElementById("webShopName");
@@ -31,6 +30,11 @@ categoryContainer.appendChild(secondCategory);
 categoryContainer.appendChild(thirdCategory);
 navbar?.appendChild(categoryContainer);
 
+const cartButton = document.createElement("button");
+const cartIcon = document.createElement("img");
+cartIcon.src = "../assets/icons/cart.png";
+cartIcon.alt = "icon av shoppingvagn";
+cartButton.appendChild(cartIcon);
+document.getElementById("header")?.appendChild(cartButton);
 
 createProductsHTML();
-
