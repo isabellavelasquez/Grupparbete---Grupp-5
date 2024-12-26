@@ -55,7 +55,8 @@ export const createProductsHTML = () => {
       if (productsContainer) {
         productsContainer.innerHTML = "";
       }
-      HTMLProductPage();
+      HTMLProductPage(product);
+      return product;
       //   behöver denna vara i if satsen eller utanför
     });
   });
