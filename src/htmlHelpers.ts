@@ -2,10 +2,10 @@ import { Product } from "./Models/Product";
 import { addToCart } from "./services.ts/cartService";
 
 export const products: Product[]  = [
-    new Product("Shirt", 100,"assets/products/Blue shirt.png", "Blue Shirt", "abc123", false),
-    new Product("Red dress", 250, "assets/products/Red dress.png", "Red Dress", "abc124", false),
-    new Product("Boots", 300, "assets/products/Boots.png", "Boots", "abc125", false), 
-    new Product("Red bag", 250, "assets/products/Red bag.png", "Red bag", "abc1237", false)
+    new Product("Shirt", 100,"assets/products/Blue shirt.png", "Blue Shirt", "blueshirt1"),
+    new Product("Red dress", 250, "assets/products/Red dress.png", "Red Dress", "reddress1"),
+    new Product("Boots", 300, "assets/products/Boots.png", "Boots", "boots1"), 
+    new Product("Red bag", 250, "assets/products/Red bag.png", "Red bag", "redbag1")
 ]
 
 export const createProductsHTML = () => {

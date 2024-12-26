@@ -1,7 +1,6 @@
 import "./style.scss";
 import { createProductsHTML } from './htmlHelpers'
 
-
 // header
 const h1 = document.getElementById("webShopName");
 if (h1) {
