@@ -23,16 +23,27 @@ export const HTMLProductPage = (product: Product) => {
   const amount = document.createElement("p");
   amount.classList.add("productAmount");
   amount.innerHTML = String(product.amount);
+  const amountDiv = document.createElement("div");
+  const minusBtn = document.createElement("button");
+  minusBtn.innerHTML = "-";
+  const plusBtn = document.createElement("button");
+  plusBtn.innerHTML = "+";
+  minusBtn.addEventListener("click", () => {});
+  plusBtn.addEventListener("click", () => {});
 
   const addToCartBtn = document.createElement("button");
   addToCartBtn.classList.add("addToCartBtn");
   addToCartBtn.innerHTML = "Lägg till";
 
+  amountDiv.appendChild(minusBtn);
+  amountDiv.appendChild(amount);
+  amountDiv.appendChild(plusBtn);
+
   container.appendChild(productImg);
   container.appendChild(productTitle);
   container.appendChild(productPrice);
   container.appendChild(productDescription);
-  container.appendChild(amount);
+  container.appendChild(amountDiv);
   container.appendChild(addToCartBtn);
   document.getElementById("productsContainer")?.appendChild(container);
 };
