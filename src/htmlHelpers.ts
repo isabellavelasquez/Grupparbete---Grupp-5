@@ -64,8 +64,6 @@ export const createProductsHTML = () => {
         productsContainer.innerHTML = "";
       }
       HTMLProductPage(product);
-      return product;
-      //   behöver denna vara i if satsen eller utanför
     });
   });
 };
