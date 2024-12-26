@@ -10,7 +10,7 @@ export const HTMLProductPage = (product: Product) => {
   productTitle.innerHTML = product.title;
 
   const productPrice = document.createElement("p");
-  productPrice.innerHTML = String(product.price);
+  productPrice.innerHTML = String(product.price) + ":-";
 
   const productDescription = document.createElement("p");
   productDescription.innerHTML = product.description;
