@@ -16,8 +16,16 @@ export const HTMLProductPage = (product: Product) => {
   productDescription.innerHTML = product.description;
 
   const amount = document.createElement("p");
-  amount.innerHTML = product.amount;
+  amount.innerHTML = String(product.amount);
 
   const addToCartBtn = document.createElement("button");
   addToCartBtn.innerHTML = "Lägg till";
+
+  container.appendChild(productImg);
+  container.appendChild(productTitle);
+  container.appendChild(productPrice);
+  container.appendChild(productDescription);
+  container.appendChild(amount);
+  container.appendChild(addToCartBtn);
+  document.getElementById("productsContainer")?.appendChild(container);
 };
