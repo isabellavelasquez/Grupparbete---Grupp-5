@@ -56,7 +56,7 @@ header {
   }
 }
 
-.productContainer {
+#productContainer {
   display: grid;
   grid-template-columns: auto auto auto;
   max-width: 800px;
@@ -96,13 +96,13 @@ header {
 }
 
 #productsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 2vh;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2vh;
+  justify-content: center;
 
-    & #productContainer {
-        margin: 2vh;
-    }       
+  & #productContainer {
+    margin: 2vh;
+  }
 }

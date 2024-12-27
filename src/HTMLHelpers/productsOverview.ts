@@ -1,6 +1,7 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
+import { modalFunction } from "./modal";
 
 const products: Product[] = [
   new Product(
@@ -41,41 +42,39 @@ const products: Product[] = [
   ),
 ];
 
-    export const createProductsHTML = () => {
-      products.forEach(product => {
-          const productDiv = document.createElement("div");
-          productDiv.id = "productContainer";
-  
-          const image = document.createElement("img");
-          image.src = product.imgSrc;
-          image.alt = product.imgAlt;
-  
-          const title = document.createElement("h2");
-          (title as HTMLHeadingElement).innerHTML = product.title;
-  
-          const price = document.createElement("p");
-          price.innerHTML = String(product.price) + " :-";
-  
-          const quickAddButton = document.createElement("button");
-          quickAddButton.innerHTML = "Add to cart";
-          quickAddButton.id = "qickAddButton";
-  
-          productDiv.append(image, title, price, quickAddButton);
-  
-          document.getElementById("productsContainer")?.appendChild(productDiv);
-  
-          quickAddButton.addEventListener("click", () => {
-              addToCart(product);
-          })
+export const createProductsHTML = () => {
+  products.forEach((product) => {
+    const productDiv = document.createElement("div");
+    productDiv.id = "productContainer";
 
-          image.addEventListener("click", () => {
-            const productsContainer = document.getElementById("productsContainer");
-            if (productsContainer) {
-              productsContainer.innerHTML = "";
-            }
-            HTMLProductPage(product);
-          });
-  
-      });
-  
-  }
+    const image = document.createElement("img");
+    image.src = product.imgSrc;
+    image.alt = product.imgAlt;
+
+    const title = document.createElement("h2");
+    (title as HTMLHeadingElement).innerHTML = product.title;
+
+    const price = document.createElement("p");
+    price.innerHTML = String(product.price) + " :-";
+
+    const quickAddButton = document.createElement("button");
+    quickAddButton.innerHTML = "Add to cart";
+    quickAddButton.id = "qickAddButton";
+
+    productDiv.append(image, title, price, quickAddButton);
+
+    document.getElementById("productsContainer")?.appendChild(productDiv);
+
+    quickAddButton.addEventListener("click", () => {
+      addToCart(product);
+      modalFunction(product);
+    });
+
+    image.addEventListener("click", () => {
+      const productsContainer = document.getElementById("productsContainer");
+
+      // localStorage.setItem('activeItem', JSON.stringify(product))
+      // här kommer något sånt här behövas för att kunna se enskilda produkter på product page
+    });
+  });
+};

@@ -1,9 +1,18 @@
 import { Product } from "../Models/Product";
 import { modalFunction } from "./modal";
 
-export const HTMLProductPage = (product: Product) => {
-  const container = document.createElement("container");
-  container.classList.add("productContainer");
+export const HTMLProductPage = () => {
+  const product = new Product(
+    "Boots",
+    300,
+    "../assets/products/Boots.png",
+    "Boots",
+    "Ett par chelseaboots med resår i sidorna och hälla bak. Foder och innersula i satin.",
+    "abc125",
+    1
+  );
+  const container = document.getElementById("productContainer");
+
   const productImg = document.createElement("img");
   productImg.classList.add("productImg");
   productImg.src = product.imgSrc;
@@ -42,12 +51,13 @@ export const HTMLProductPage = (product: Product) => {
   amountDiv.appendChild(minusBtn);
   amountDiv.appendChild(amount);
   amountDiv.appendChild(plusBtn);
-
-  container.appendChild(productImg);
-  container.appendChild(productTitle);
-  container.appendChild(productPrice);
-  container.appendChild(productDescription);
-  container.appendChild(amountDiv);
-  container.appendChild(addToCartBtn);
-  document.getElementById("productsContainer")?.appendChild(container);
+  if (container) {
+    container.appendChild(productImg);
+    container.appendChild(productTitle);
+    container.appendChild(productPrice);
+    container.appendChild(productDescription);
+    container.appendChild(amountDiv);
+    container.appendChild(addToCartBtn);
+  }
 };
+HTMLProductPage();
