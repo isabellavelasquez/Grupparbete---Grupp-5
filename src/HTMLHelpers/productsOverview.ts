@@ -1,6 +1,6 @@
-import { HTMLProductPage } from "./htmlHelperProductPage";
-import { Product } from "./Models/Product";
-import { addToCart } from "./services.ts/cartService";
+import { HTMLProductPage } from "./productPage";
+import { Product } from "../Models/Product";
+import { addToCart } from "../services.ts/cartService";
 
 const products: Product[] = [
   new Product(

@@ -1,4 +1,4 @@
-import { Product } from "./Models/Product";
+import { Product } from "../Models/Product";
 
 export const HTMLProductPage = (product: Product) => {
   const container = document.createElement("container");

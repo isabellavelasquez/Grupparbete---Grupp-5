@@ -1,6 +1,6 @@
 import "./style.scss";
 
-import { createProductsHTML } from "./htmlHelpers";
+import { createProductsHTML } from "./HTMLHelpers/productsOverview";
 import { theBackButton } from "./thebackbutton";
 
 // header
