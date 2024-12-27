@@ -1,5 +1,7 @@
 import "./style.scss";
-import { createProductsHTML } from './htmlHelpers'
+
+import { createProductsHTML } from "./htmlHelpers";
+import { theBackButton } from "./thebackbutton";
 
 // header
 const h1 = document.getElementById("webShopName");
@@ -41,3 +43,4 @@ cartIcon.addEventListener("click", () => {
 });
 
 createProductsHTML();
+theBackButton("../assets/icons/back.arrow.png", "backbutton");
