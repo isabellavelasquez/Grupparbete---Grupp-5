@@ -1,4 +1,5 @@
 import "./style.scss";
+
 import { createProductsHTML } from "./htmlHelpers";
 import { theBackButton } from "./thebackbutton";
 
