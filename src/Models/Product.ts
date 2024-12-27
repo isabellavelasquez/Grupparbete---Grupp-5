@@ -1,4 +1,5 @@
 export class Product {
+
   constructor(
     public title: string,
     public price: number,
@@ -6,7 +7,7 @@ export class Product {
     public imgAlt: string,
     public description: string,
     public id: string,
-    public isInCart: boolean,
     public amount: number
-  ) {}
+  ) 
 }
+

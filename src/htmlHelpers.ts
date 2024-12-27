@@ -1,5 +1,6 @@
 import { HTMLProductPage } from "./htmlHelperProductPage";
 import { Product } from "./Models/Product";
+import { addToCart } from "./services.ts/cartService";
 
 const products: Product[] = [
   new Product(
@@ -67,3 +68,4 @@ export const createProductsHTML = () => {
     });
   });
 };
+
