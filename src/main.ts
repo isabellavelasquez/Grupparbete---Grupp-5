@@ -29,7 +29,15 @@ categoryContainer.appendChild(firstCategory);
 categoryContainer.appendChild(secondCategory);
 categoryContainer.appendChild(thirdCategory);
 navbar?.appendChild(categoryContainer);
+// cart icon top corner
+const cartIcon = document.createElement("img");
+cartIcon.src = "../assets/icons/cart.png";
+cartIcon.alt = "icon av shoppingvagn";
+cartIcon.classList.add("cartButtonIcon");
+document.getElementById("header")?.appendChild(cartIcon);
 
+cartIcon.addEventListener("click", () => {
+  console.log("du klickade");
+});
 
 createProductsHTML();
-

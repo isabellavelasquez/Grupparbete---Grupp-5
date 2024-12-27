@@ -1,34 +1,81 @@
-h1,
-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-  font-size: 44px;
+header {
+  h1,
+  form {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 44px;
+  }
+  form {
+    margin-top: 20px;
+  }
+  input,
+  button {
+    margin-right: 20px;
+    border-radius: 8px;
+    height: 24px;
+    box-shadow: 3px 3px 7px rgb(120, 118, 118);
+  }
+  .inputStyle {
+    font-style: italic;
+  }
+  .categorys {
+    list-style-type: none;
+    display: flex;
+    background-color: #d7d3d3;
+    height: 50px;
+    font-size: 24px;
+    justify-content: space-around;
+    align-items: center;
+    :hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  .cartButtonIcon {
+    border: none;
+    top: 80px;
+    right: 50px;
+    height: 60px;
+    position: fixed;
+  }
 }
-form {
-  margin-top: 20px;
-}
-input,
-button {
-  margin-right: 20px;
-  border-radius: 8px;
-  height: 24px;
-  box-shadow: 3px 3px 7px rgb(120, 118, 118);
-}
-.inputStyle {
-  font-style: italic;
-}
-.categorys {
-  list-style-type: none;
-  display: flex;
-  background-color: #d7d3d3;
-  height: 50px;
-  font-size: 24px;
-  justify-content: space-around;
-  align-items: center;
-  :hover {
-    cursor: pointer;
-    text-decoration: underline;
+.productContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  max-width: 800px;
+  margin: 150px;
+
+  .productImg {
+    height: 300px;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+  .productTitle {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .productDesc {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  div {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 16px;
+    width: 100px;
+    height: 30px;
+    font-size: 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+  }
+  .addToCartBtn {
+    width: 100px;
+    height: 30px;
+    border-radius: 16px;
   }
 }
 
@@ -43,3 +90,4 @@ button {
         margin: 2vh;
     }       
 }
+
