@@ -41,26 +41,41 @@ const products: Product[] = [
   ),
 ];
 
-export const createProductsHTML = () => {
-  products.forEach((product) => {
-    const image = document.createElement("img");
-    document.getElementById("productsContainer")?.appendChild(image);
-    image.src = product.imgSrc;
-    image.alt = product.imgAlt;
+    export const createProductsHTML = () => {
+      products.forEach(product => {
+          const productDiv = document.createElement("div");
+          productDiv.id = "productContainer";
+  
+          const image = document.createElement("img");
+          image.src = product.imgSrc;
+          image.alt = product.imgAlt;
+  
+          const title = document.createElement("h2");
+          (title as HTMLHeadingElement).innerHTML = product.title;
+  
+          const price = document.createElement("p");
+          price.innerHTML = String(product.price) + " :-";
+  
+          const quickAddButton = document.createElement("button");
+          quickAddButton.innerHTML = "Add to cart";
+          quickAddButton.id = "qickAddButton";
+  
+          productDiv.append(image, title, price, quickAddButton);
+  
+          document.getElementById("productsContainer")?.appendChild(productDiv);
+  
+          quickAddButton.addEventListener("click", () => {
+              addToCart(product);
+          })
 
-    const title = document.createElement("h2");
-    document.getElementById("productsContainer")?.appendChild(title);
-    (title as HTMLHeadingElement).innerHTML = product.title;
-
-    const price = document.createElement("p");
-    document.getElementById("productsContainer")?.appendChild(price);
-    price.innerHTML = String(product.price) + ":-";
-    image.addEventListener("click", () => {
-      const productsContainer = document.getElementById("productsContainer");
-      if (productsContainer) {
-        productsContainer.innerHTML = "";
-      }
-      HTMLProductPage(product);
-    });
-  });
-};
+          image.addEventListener("click", () => {
+            const productsContainer = document.getElementById("productsContainer");
+            if (productsContainer) {
+              productsContainer.innerHTML = "";
+            }
+            HTMLProductPage(product);
+          });
+  
+      });
+  
+  }

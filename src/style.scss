@@ -104,5 +104,7 @@ header {
 
     & #productContainer {
         margin: 2vh;
+        display: flex;
+        flex-direction: row;
     }       
 }
