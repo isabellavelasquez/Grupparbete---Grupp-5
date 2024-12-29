@@ -1,7 +1,9 @@
 import { Product } from "../Models/Product";
 
 export function modalFunction(product: Product) {
-  const modalWrapper = document.getElementById("modal");
+  const header = document.getElementById("header");
+  const modalWrapper = document.createElement("div");
+  modalWrapper.id = "modal";
   const pTag = document.createElement("p");
   pTag.innerHTML = product.title + " lades till i varukorgen";
   const aTag = document.createElement("a");
@@ -15,10 +17,11 @@ export function modalFunction(product: Product) {
   modalWrapper?.appendChild(pTag);
   modalWrapper?.appendChild(aTag);
   modalWrapper?.appendChild(xIcon);
+  header?.appendChild(modalWrapper);
 
   setTimeout(() => {
     if (modalWrapper) {
-      modalWrapper.innerHTML = "";
+      modalWrapper.parentNode?.removeChild(modalWrapper);
     }
-  }, 3000);
+  }, 5000);
 }

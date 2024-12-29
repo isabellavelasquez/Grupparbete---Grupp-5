@@ -71,8 +71,6 @@ export const createProductsHTML = () => {
     });
 
     image.addEventListener("click", () => {
-      const productsContainer = document.getElementById("productsContainer");
-
       // localStorage.setItem('activeItem', JSON.stringify(product))
       // här kommer något sånt här behövas för att kunna se enskilda produkter på product page
     });
