@@ -39,6 +39,9 @@ header {
     height: 60px;
     position: fixed;
   }
+  .animate {
+    animation: wobble-vertical-left 1s ease-in-out;
+  }
 }
 
 .backbutton {
