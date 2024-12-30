@@ -1,6 +1,7 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
+import "../style.scss";
 
 const products: Product[] = [
   new Product(
@@ -65,13 +66,16 @@ export const createProductsHTML = () => {
     document.getElementById("productsContainer")?.appendChild(productDiv);
 
     quickAddButton.addEventListener("click", () => {
+      console.log("quickAddButton clicked"); //test
       addToCart(product);
       const cartIcon = document.getElementById("cartIcon");
       if (cartIcon) {
+        console.log("cartIcon found"); // test 2
         cartIcon.classList.remove("animate");
         setTimeout(() => {
           cartIcon.classList.add("animate");
-        }, 1);
+          console.log("animation");
+        }, 10);
       }
     });
 
