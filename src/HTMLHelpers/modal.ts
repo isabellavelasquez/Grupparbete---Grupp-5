@@ -8,8 +8,7 @@ export function modalFunction(product: Product) {
   pTag.innerHTML = product.title + " lades till i varukorgen";
   const aTag = document.createElement("a");
   aTag.innerHTML = "Visa";
-  // TODO: ska länka till varukorgssidan ej index
-  aTag.href = "index.html";
+  aTag.href = "../pages/cart.html";
   const xIcon = document.createElement("img");
   xIcon.src = "../../assets/icons/x_icon.png";
   xIcon.alt = "x icon";
@@ -23,5 +22,5 @@ export function modalFunction(product: Product) {
     if (modalWrapper) {
       modalWrapper.parentNode?.removeChild(modalWrapper);
     }
-  }, 5000);
+  }, 3000);
 }
