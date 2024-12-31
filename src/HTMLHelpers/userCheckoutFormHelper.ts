@@ -121,6 +121,11 @@ export function createUserCheckoutForm(): HTMLElement {
   ccZipCodeInput.name = "cc-zip-code";
   ccZipCodeInput.placeholder = "Zip Code";
 
+  //end - Submit button
+  const submitButton = document.createElement("button");
+  submitButton.type = "submit";
+  submitButton.innerText = "Accept & Pay";
+
   // Appends
   formUser.appendChild(nameInput);
   formUser.appendChild(lastNameInput);
@@ -144,6 +149,7 @@ export function createUserCheckoutForm(): HTMLElement {
   section.appendChild(userField);
   section.appendChild(billingField);
   section.appendChild(creditCardDetails);
+  section.appendChild(submitButton);
 
   return section;
 }
