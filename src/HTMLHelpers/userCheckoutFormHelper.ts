@@ -92,17 +92,17 @@ export function createUserCheckoutForm(): HTMLElement {
   ccExpirationDateInput.name = "cc-expiration-date";
   ccExpirationDateInput.placeholder = "Expiration Date (MM/YY)";
 
-  // div med bilder för
+  // div med bilder till EXPIRATION DATE
   const expirationDateImage = document.createElement("div");
 
   const img1 = document.createElement("img");
   const img2 = document.createElement("img");
   const img3 = document.createElement("img");
 
-  // Set the src attribute for the images (replace 'image1.png', 'image2.png', 'image3.png' with actual image paths)
-  img1.src = "image1.png";
-  img2.src = "image2.png";
-  img3.src = "image3.png";
+  // Bilderna för att visa vilka kort som accepteras
+  img1.src = "../../assets/icons/credit_debit_mastercard.png";
+  img2.src = "../../assets/icons/card_credit_visa.png";
+  img3.src = "../../assets/icons/card_paypal_method.png";
 
   // Append images to the div
   expirationDateImage.appendChild(img1);
