@@ -139,6 +139,7 @@ export function createUserCheckoutForm(): HTMLElement {
   creditCardDetails.appendChild(ccLastNameInput);
   creditCardDetails.appendChild(ccNumberInput);
   creditCardDetails.appendChild(ccExpirationDateInput);
+  creditCardDetails.appendChild(expirationDateImage);
   creditCardDetails.appendChild(ccCvvInput);
   creditCardDetails.appendChild(ccZipCodeInput);
   // Append the forms to the sections
