@@ -3,7 +3,7 @@ import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
 import { modalFunction } from "./modal";
 
-const products: Product[] = [
+export const products: Product[] = [
   new Product(
     "Shirt",
     100,
