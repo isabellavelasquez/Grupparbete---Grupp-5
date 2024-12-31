@@ -1,8 +1,15 @@
 import { Product } from "../Models/Product";
+import { modalFunction } from "./modal";
 
-export const HTMLProductPage = (product: Product) => {
-  const container = document.createElement("container");
-  container.classList.add("productContainer");
+export const HTMLProductPage = () => {
+  const selectedProduct = localStorage.getItem("selectedProduct");
+  let product: Product;
+  if (selectedProduct) {
+    product = JSON.parse(selectedProduct);
+  } else return;
+
+  const container = document.getElementById("productPageContainer");
+
   const productImg = document.createElement("img");
   productImg.classList.add("productImg");
   productImg.src = product.imgSrc;
@@ -34,16 +41,20 @@ export const HTMLProductPage = (product: Product) => {
   const addToCartBtn = document.createElement("button");
   addToCartBtn.classList.add("addToCartBtn");
   addToCartBtn.innerHTML = "Lägg till";
+  addToCartBtn.addEventListener("click", () => {
+    modalFunction(product);
+  });
 
   amountDiv.appendChild(minusBtn);
   amountDiv.appendChild(amount);
   amountDiv.appendChild(plusBtn);
-
-  container.appendChild(productImg);
-  container.appendChild(productTitle);
-  container.appendChild(productPrice);
-  container.appendChild(productDescription);
-  container.appendChild(amountDiv);
-  container.appendChild(addToCartBtn);
-  document.getElementById("productsContainer")?.appendChild(container);
+  if (container) {
+    container.appendChild(productImg);
+    container.appendChild(productTitle);
+    container.appendChild(productPrice);
+    container.appendChild(productDescription);
+    container.appendChild(amountDiv);
+    container.appendChild(addToCartBtn);
+  }
 };
+HTMLProductPage();
