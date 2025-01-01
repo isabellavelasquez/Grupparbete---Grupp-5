@@ -94,15 +94,16 @@ export function createUserCheckoutForm(): HTMLElement {
 
   // div med bilder till EXPIRATION DATE
   const expirationDateImage = document.createElement("div");
+  expirationDateImage.id = "cards-images";
 
   const img1 = document.createElement("img");
   const img2 = document.createElement("img");
   const img3 = document.createElement("img");
 
   // Bilderna för att visa vilka kort som accepteras
-  img1.src = "../../assets/icons/credit_debit_mastercard.png";
-  img2.src = "../../assets/icons/card_credit_visa.png";
-  img3.src = "../../assets/icons/card_paypal_method.png";
+  img1.src = "/../assets/icons/card_credit_debit_mastercard_icon.png";
+  img2.src = "/../assets/icons/card_credit_logo_visa_icon.png";
+  img3.src = "/../assets/icons/card_paypal_method_payment_icon.png";
 
   // Append images to the div
   expirationDateImage.appendChild(img1);
