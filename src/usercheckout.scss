@@ -53,8 +53,16 @@
 #cards-images img {
   width: 50px;
   height: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
+#cards-images img.grayed-out {
+  opacity: 0.5;
+}
+#cards-images img.highlight {
+  filter: brightness(1.5);
+}
 button[type="submit"] {
   padding: 10px;
   background-color: #4e97eb;
