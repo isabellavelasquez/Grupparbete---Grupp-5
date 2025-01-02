@@ -1,7 +1,10 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
-import { addToCart } from "../services.ts/cartService";
+import { addToCart, cart } from "../services.ts/cartService";
 import { modalFunction } from "./modal";
+
+localStorage.getItem("Cart");
+
 
 export const products: Product[] = [
   new Product(
@@ -68,6 +71,7 @@ export const createProductsHTML = () => {
     quickAddButton.addEventListener("click", () => {
       addToCart(product);
       modalFunction(product);
+      console.log(cart);
     });
 
     image.addEventListener("click", () => {
