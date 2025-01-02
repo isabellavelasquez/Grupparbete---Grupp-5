@@ -33,11 +33,15 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  .input.invalid {
-    border-color: red;
-  }
 }
-
+#user-checkout-form input.invalid {
+  border-color: red;
+}
+#custom-email-validity-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
 #cards-images {
   display: flex;
   justify-content: left;
