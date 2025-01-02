@@ -1,6 +1,7 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
+import "../style.scss";
 import { modalFunction } from "./modal";
 
 export const products: Product[] = [
@@ -67,12 +68,22 @@ export const createProductsHTML = () => {
 
     quickAddButton.addEventListener("click", () => {
       addToCart(product);
-      modalFunction(product);
+      const cartIcon = document.getElementById("cartIcon");
+      if (cartIcon) {
+        cartIcon.classList.remove("animate");
+        setTimeout(() => {
+          cartIcon.classList.add("animate");
+        }, 10);
+      }
     });
 
     image.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "/pages/productPage.html";
+    });
+
+    modalFunction(product);
+
     });
   });
 };

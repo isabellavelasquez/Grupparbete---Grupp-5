@@ -39,6 +39,9 @@ header {
     height: 60px;
     position: fixed;
   }
+  .animate {
+    animation: wobble-vertical-left 1s ease-in-out;
+  }
 }
 
 .backbutton {
@@ -105,6 +108,31 @@ header {
   & #productContainer {
     margin: 2vh;
   }
+}
+
+animation wobble-vertical-left {
+  @keyframes wobble-vertical-left {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+      transform-origin: 50% 50%;
+    }
+    15% {
+      transform: translateY(-30px) rotate(-6deg);
+    }
+    30% {
+      transform: translateY(15px) rotate(6deg);
+    }
+    45% {
+      transform: translateY(-15px) rotate(-3.6deg);
+    }
+    60% {
+      transform: translateY(9px) rotate(2.4deg);
+    }
+    75% {
+      transform: translateY(-6px) rotate(-1.2deg);
+    }
+
 }
 #modal {
   background-color: lightgray;
