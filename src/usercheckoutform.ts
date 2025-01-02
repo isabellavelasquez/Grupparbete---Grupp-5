@@ -48,13 +48,13 @@ function highlightCardType(
   const visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
   const masterCard = /^5[1-5][0-9]{14}$/;
   if (visa.test(value)) {
-    img1.classList.add("highlight");
-    img2.classList.add("grayed-out");
-    img2.classList.remove("highlight");
-  } else if (masterCard.test(value)) {
     img2.classList.add("highlight");
     img1.classList.add("grayed-out");
     img1.classList.remove("highlight");
+  } else if (masterCard.test(value)) {
+    img1.classList.add("highlight");
+    img2.classList.add("grayed-out");
+    img2.classList.remove("highlight");
   } else {
     img1.classList.remove("highlight", "grayed-out");
     img2.classList.remove("highlight", "grayed-out");
