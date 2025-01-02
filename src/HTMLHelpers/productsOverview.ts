@@ -83,7 +83,5 @@ export const createProductsHTML = () => {
     });
 
     modalFunction(product);
-
-    });
   });
 };
