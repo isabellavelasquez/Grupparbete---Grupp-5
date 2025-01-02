@@ -90,7 +90,25 @@ export function createUserCheckoutForm(): HTMLElement {
   const ccExpirationDateInput = document.createElement("input");
   ccExpirationDateInput.type = "text";
   ccExpirationDateInput.name = "cc-expiration-date";
-  ccExpirationDateInput.placeholder = "Expiration Date";
+  ccExpirationDateInput.placeholder = "Expiration Date (MM/YY)";
+
+  // div med bilder till EXPIRATION DATE
+  const expirationDateImage = document.createElement("div");
+  expirationDateImage.id = "cards-images";
+
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("img");
+  const img3 = document.createElement("img");
+
+  // Bilderna för att visa vilka kort som accepteras
+  img1.src = "/../assets/icons/card_credit_debit_mastercard_icon.png";
+  img2.src = "/../assets/icons/card_credit_logo_visa_icon.png";
+  img3.src = "/../assets/icons/card_paypal_method_payment_icon.png";
+
+  // Append images to the div
+  expirationDateImage.appendChild(img1);
+  expirationDateImage.appendChild(img2);
+  expirationDateImage.appendChild(img3);
 
   // CVV code input
   const ccCvvInput = document.createElement("input");
@@ -103,6 +121,11 @@ export function createUserCheckoutForm(): HTMLElement {
   ccZipCodeInput.type = "text";
   ccZipCodeInput.name = "cc-zip-code";
   ccZipCodeInput.placeholder = "Zip Code";
+
+  //end - Submit button
+  const submitButton = document.createElement("button");
+  submitButton.type = "submit";
+  submitButton.innerText = "Accept & Pay";
 
   // Appends
   formUser.appendChild(nameInput);
@@ -117,6 +140,7 @@ export function createUserCheckoutForm(): HTMLElement {
   creditCardDetails.appendChild(ccLastNameInput);
   creditCardDetails.appendChild(ccNumberInput);
   creditCardDetails.appendChild(ccExpirationDateInput);
+  creditCardDetails.appendChild(expirationDateImage);
   creditCardDetails.appendChild(ccCvvInput);
   creditCardDetails.appendChild(ccZipCodeInput);
   // Append the forms to the sections
@@ -127,6 +151,7 @@ export function createUserCheckoutForm(): HTMLElement {
   section.appendChild(userField);
   section.appendChild(billingField);
   section.appendChild(creditCardDetails);
+  section.appendChild(submitButton);
 
   return section;
 }

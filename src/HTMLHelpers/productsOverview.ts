@@ -2,12 +2,13 @@ import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
 import "../style.scss";
+import { modalFunction } from "./modal";
 
-const products: Product[] = [
+export const products: Product[] = [
   new Product(
     "Shirt",
     100,
-    "assets/products/Blue shirt.png",
+    "../../assets/products/Blue shirt.png",
     "Blue Shirt",
     "En stickad tröja med avslappnad passform tillverkad av en mjuk blandning av återvunnen polyamid och återvunnen polyester, utökad med en touch av återvunnen elastan och ull för extra stretch och värme. Den har en rund ribbad halsringning, droppade axlar och ribbade kanter.",
     "abc123",
@@ -16,7 +17,7 @@ const products: Product[] = [
   new Product(
     "Red dress",
     250,
-    "assets/products/Red dress.png",
+    "../../assets/products/Red dress.png",
     "Red Dress",
     "Klänning med jacquardvävt mönster. Rundad midja med rynk. Dold dragkedja mitt bak. Fodrad upptill.",
     "abc124",
@@ -25,7 +26,7 @@ const products: Product[] = [
   new Product(
     "Boots",
     300,
-    "assets/products/Boots.png",
+    "../../assets/products/Boots.png",
     "Boots",
     "Ett par chelseaboots med resår i sidorna och hälla bak. Foder och innersula i satin.",
     "abc125",
@@ -34,7 +35,7 @@ const products: Product[] = [
   new Product(
     "Red bag",
     250,
-    "assets/products/Red bag.png",
+    "../../assets/products/Red bag.png",
     "Red bag",
     "En crossbody-väska med två separata fack och dolt magnetlås. Väskan har reglerbar axelrem och reglerbart handtag med klätt spänne i vardera sida. Fodrad. Djup 9 cm. Höjd 23 cm. Bredd 26 cm",
     "abc1237",
@@ -66,25 +67,23 @@ export const createProductsHTML = () => {
     document.getElementById("productsContainer")?.appendChild(productDiv);
 
     quickAddButton.addEventListener("click", () => {
-      console.log("quickAddButton clicked"); //test
       addToCart(product);
       const cartIcon = document.getElementById("cartIcon");
       if (cartIcon) {
-        console.log("cartIcon found"); // test 2
         cartIcon.classList.remove("animate");
         setTimeout(() => {
           cartIcon.classList.add("animate");
-          console.log("animation");
         }, 10);
       }
     });
 
     image.addEventListener("click", () => {
-      const productsContainer = document.getElementById("productsContainer");
-      if (productsContainer) {
-        productsContainer.innerHTML = "";
-      }
-      HTMLProductPage(product);
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      window.location.href = "/pages/productPage.html";
+    });
+
+    modalFunction(product);
+
     });
   });
 };

@@ -40,6 +40,7 @@ cartIcon.classList.add("cartButtonIcon");
 document.getElementById("header")?.appendChild(cartIcon);
 
 cartIcon.addEventListener("click", () => {
+  window.location.href = "/pages/cart.html";
   console.log("du klickade");
 });
 
