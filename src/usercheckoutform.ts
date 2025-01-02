@@ -23,8 +23,7 @@ function addValidation(
     if (input.value === "") {
       input.classList.remove("invalid");
       customValidityMessage.style.display = "none";
-    }
-    if (!validationFn(input.value)) {
+    } else if (!validationFn(input.value)) {
       input.classList.add("invalid");
       customValidityMessage.textContent = errorMessage;
       customValidityMessage.style.display = "block";
@@ -38,4 +37,26 @@ function addValidation(
 const emailInput = userForm?.elements.namedItem("email") as HTMLInputElement;
 if (emailInput) {
   addValidation(emailInput, "Missing '@'", (value) => value.includes("@"));
+}
+
+const formCreditCard = document.getElementById(
+  "credit-card-form"
+) as HTMLFormElement;
+
+const ccNumberInput = formCreditCard?.elements.namedItem(
+  "cc-number"
+) as HTMLInputElement;
+if (ccNumberInput) {
+  addValidation(ccNumberInput, "Must 16 numbers", (value) => {
+    return /^\d{16}$/.test(value);
+  });
+}
+
+const ccCvvInput = formCreditCard?.elements.namedItem(
+  "cc-cvv"
+) as HTMLInputElement;
+if (ccCvvInput) {
+  addValidation(ccCvvInput, "Must 3 numbers", (value) => {
+    return /^\d{3}$/.test(value);
+  });
 }
