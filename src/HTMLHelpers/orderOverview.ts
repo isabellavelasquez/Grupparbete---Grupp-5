@@ -44,6 +44,7 @@ export const products: Product[] = [
 ];
 const orderViewHMTL = () => {
   products.forEach((product) => {
+    const productsContainer = document.createElement("container");
     const img = document.createElement("img");
     img.src = product.imgSrc;
     img.alt = product.imgAlt;
@@ -53,7 +54,17 @@ const orderViewHMTL = () => {
     amount.innerHTML = "Amount: " + product.amount;
     const sum = document.createElement("p");
     sum.innerHTML = String(product.amount * product.price);
-    const totalSum = document.createElement("p");
-    totalSum.innerHTML = String(product.amount * product.price);
+
+    productsContainer.append(img, title, amount, sum);
+    orderviewDiv?.appendChild(productsContainer);
   });
+  const totalSum = document.createElement("p");
+
+  let total = 0;
+  products.forEach((product) => {
+    total += product.price * product.amount;
+  });
+  totalSum.innerHTML = String(total);
+  orderviewDiv?.appendChild(totalSum);
 };
+orderViewHMTL();
