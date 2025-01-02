@@ -83,7 +83,5 @@ export const createProductsHTML = () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "/pages/productPage.html";
     });
-
-    modalFunction(product);
   });
 };
