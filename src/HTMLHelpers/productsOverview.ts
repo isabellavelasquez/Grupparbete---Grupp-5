@@ -68,6 +68,8 @@ export const createProductsHTML = () => {
 
     quickAddButton.addEventListener("click", () => {
       addToCart(product);
+      modalFunction(product);
+
       const cartIcon = document.getElementById("cartIcon");
       if (cartIcon) {
         cartIcon.classList.remove("animate");
