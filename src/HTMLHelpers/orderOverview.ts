@@ -1,8 +1,10 @@
 import { Product } from "../Models/Product";
+import "../styles/orderOverview.scss";
 
 const orderviewDiv = document.getElementById("orderOverview");
 const h3 = document.createElement("h3");
 h3.innerHTML = "Your order";
+orderviewDiv?.appendChild(h3);
 
 export const products: Product[] = [
   new Product(
@@ -44,7 +46,7 @@ export const products: Product[] = [
 ];
 const orderViewHMTL = () => {
   products.forEach((product) => {
-    const productsContainer = document.createElement("container");
+    const productsContainer = document.createElement("div");
     const img = document.createElement("img");
     img.src = product.imgSrc;
     img.alt = product.imgAlt;
@@ -52,19 +54,28 @@ const orderViewHMTL = () => {
     title.innerHTML = product.title;
     const amount = document.createElement("p");
     amount.innerHTML = "Amount: " + product.amount;
+    amount.classList.add("pTagAmount");
     const sum = document.createElement("p");
-    sum.innerHTML = String(product.amount * product.price);
+    sum.innerHTML = String(product.amount * product.price) + " :-";
+    sum.classList.add("sumPtag");
 
     productsContainer.append(img, title, amount, sum);
     orderviewDiv?.appendChild(productsContainer);
   });
   const totalSum = document.createElement("p");
+  totalSum.classList.add("totalSum");
 
   let total = 0;
   products.forEach((product) => {
     total += product.price * product.amount;
   });
-  totalSum.innerHTML = String(total);
-  orderviewDiv?.appendChild(totalSum);
+  const totalSumDiv = document.createElement("div");
+  totalSumDiv.classList.add("sumDiv");
+  const pTagTotal = document.createElement("p");
+  pTagTotal.innerHTML = "Total: ";
+  pTagTotal.classList.add("total");
+  totalSum.innerHTML = String(total) + " :-";
+  totalSumDiv.append(pTagTotal, totalSum);
+  orderviewDiv?.appendChild(totalSumDiv);
 };
 orderViewHMTL();
