@@ -8,21 +8,30 @@ const userForm = document.getElementById("user-form") as HTMLFormElement;
 userForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 });
+function addValidation(
+  input: HTMLInputElement,
+  errorMessage: string,
+  validationFn: (value: string) => boolean
+) {
+  const customValidityMessage = document.createElement("p");
+  customValidityMessage.id = `${input.name}-validity-error`;
+  customValidityMessage.style.display = "none";
+  customValidityMessage.style.color = "red";
+  input.insertAdjacentElement("afterend", customValidityMessage);
+
+  input.addEventListener("input", () => {
+    if (!validationFn(input.value)) {
+      input.classList.add("invalid");
+      customValidityMessage.textContent = errorMessage;
+      customValidityMessage.style.display = "block";
+    } else {
+      input.classList.remove("invalid");
+      customValidityMessage.style.display = "none";
+    }
+  });
+}
 
 const emailInput = userForm?.elements.namedItem("email") as HTMLInputElement;
 if (emailInput) {
-  const customEmailValidity = document.createElement("p");
-  customEmailValidity.id = "custom-email-validity-error";
-  customEmailValidity.style.display = "none";
-  emailInput.addEventListener("input", () => {
-    emailInput.insertAdjacentElement("afterend", customEmailValidity);
-    if (!emailInput.value.includes("@")) {
-      emailInput.classList.add("invalid");
-      customEmailValidity.innerHTML = "Missing '@'";
-      customEmailValidity.style.display = "block";
-    } else {
-      emailInput.classList.remove("invalid");
-      customEmailValidity.style.display = "none";
-    }
-  });
+  addValidation(emailInput, "Missing '@'", (value) => value.includes("@"));
 }
