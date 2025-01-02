@@ -20,6 +20,10 @@ function addValidation(
   input.insertAdjacentElement("afterend", customValidityMessage);
 
   input.addEventListener("input", () => {
+    if (input.value === "") {
+      input.classList.remove("invalid");
+      customValidityMessage.style.display = "none";
+    }
     if (!validationFn(input.value)) {
       input.classList.add("invalid");
       customValidityMessage.textContent = errorMessage;
