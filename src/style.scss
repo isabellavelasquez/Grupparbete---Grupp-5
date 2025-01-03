@@ -98,18 +98,6 @@ header {
   }
 }
 
-#productsContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 2vh;
-  justify-content: center;
-
-  & #productContainer {
-    margin: 2vh;
-  }
-}
-
 #modal {
   background-color: lightgray;
   border-radius: 8px;

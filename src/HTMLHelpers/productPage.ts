@@ -1,4 +1,5 @@
 import { Product } from "../Models/Product";
+import { addToCart } from "../services.ts/cartService";
 import { modalFunction } from "./modal";
 
 export const HTMLProductPage = () => {
@@ -56,6 +57,7 @@ export const HTMLProductPage = () => {
   addToCartBtn.classList.add("addToCartBtn");
   addToCartBtn.innerHTML = "Lägg till";
   addToCartBtn.addEventListener("click", () => {
+    addToCart(product);
     modalFunction(product);
   });
 

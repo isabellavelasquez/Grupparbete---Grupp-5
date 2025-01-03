@@ -3,6 +3,9 @@ import "./style.scss";
 import { createProductsHTML } from "./HTMLHelpers/productsOverview";
 import { theBackButton } from "./thebackbutton";
 
+localStorage.getItem("Cart");
+
+
 // header
 const h1 = document.getElementById("webShopName");
 if (h1) {

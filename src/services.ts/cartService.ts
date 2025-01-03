@@ -3,6 +3,7 @@ import { Product } from "../Models/Product";
 export let cart:Map<Product, number> = new Map<Product, number>(JSON.parse(localStorage.getItem("Cart") || "[]"));
 
 export const addToCart = (product: Product) => {
+    console.log(product);
     let amount = cart.get(product);
     if(amount === undefined) {
         amount = 0;

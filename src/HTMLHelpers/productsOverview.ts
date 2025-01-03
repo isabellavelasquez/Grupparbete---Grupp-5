@@ -4,6 +4,9 @@ import { addToCart } from "../services.ts/cartService";
 import "../style.scss";
 import { modalFunction } from "./modal";
 
+localStorage.getItem("Cart");
+
+
 export const products: Product[] = [
   new Product(
     "Shirt",
@@ -69,7 +72,6 @@ export const createProductsHTML = () => {
     quickAddButton.addEventListener("click", () => {
       addToCart(product);
       modalFunction(product);
-
       const cartIcon = document.getElementById("cartIcon");
       if (cartIcon) {
         cartIcon.classList.remove("animate");
