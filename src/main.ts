@@ -1,7 +1,6 @@
 import "./style.scss";
 
 import { createProductsHTML } from "./HTMLHelpers/productsOverview";
-import { theBackButton } from "./HTMLHelpers/thebackbutton";
 
 localStorage.getItem("Cart");
 
@@ -17,6 +16,9 @@ if (input) {
 input?.classList.add("inputStyle");
 document.getElementById("searchBar")?.addEventListener("submit", (e) => {
   e.preventDefault();
+});
+h1?.addEventListener("click", () => {
+  window.location.href = "/";
 });
 
 const navbar = document.getElementById("navbar");
@@ -47,4 +49,3 @@ cartIcon.addEventListener("click", () => {
 });
 
 createProductsHTML();
-theBackButton("../../assets/icons/back.arrow.png", "backbutton");

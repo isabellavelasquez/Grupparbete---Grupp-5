@@ -1,5 +1,6 @@
 import { Product } from "../Models/Product";
 import { cart } from "../services.ts/cartService";
+import { theBackButton } from "./thebackbutton";
 
 const displayProductsInCart = (cart: Map<Product, number>) => {
   localStorage.getItem("Cart");
@@ -49,3 +50,4 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
   }
 };
 displayProductsInCart(cart);
+theBackButton("../../assets/icons/back.arrow.png", "backbutton");

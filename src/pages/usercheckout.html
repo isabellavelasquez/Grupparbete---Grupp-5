@@ -9,14 +9,15 @@
       type="module"
       src="../HTMLHelpers/usercheckoutform.ts"
     ></script>
+    <script type="module" src="../main.ts" defer></script>
     <script type="module" src="../HTMLHelpers/orderOverview.ts" defer></script>
-    <link rel="stylesheet" href="/src/style.scss" />
+    <link rel="stylesheet" href="../style.scss" />
     <link rel="stylesheet" href="/src/styles/usercheckout.scss" />
   </head>
   <body>
-    <header>
-      <h1 id="webShopName">Our Cool Webshop</h1>
-      <nav id="navbar">
+    <header id="header">
+      <h1 id="webShopName"></h1>
+      <nav id="nav">
         <ul class="categorys">
           <li>Order overview</li>
         </ul>
