@@ -116,12 +116,6 @@ export function createUserCheckoutForm(): HTMLElement {
   ccCvvInput.name = "cc-cvv";
   ccCvvInput.placeholder = "CVV Code";
 
-  // Zip code input
-  const ccZipCodeInput = document.createElement("input");
-  ccZipCodeInput.type = "text";
-  ccZipCodeInput.name = "cc-zip-code";
-  ccZipCodeInput.placeholder = "Zip Code";
-
   //end - Submit button
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
@@ -136,13 +130,12 @@ export function createUserCheckoutForm(): HTMLElement {
   formBilling.appendChild(countryInput);
   formBilling.appendChild(cityInput);
   formBilling.appendChild(postAddressInput);
-  creditCardDetails.appendChild(ccFirstNameInput);
-  creditCardDetails.appendChild(ccLastNameInput);
-  creditCardDetails.appendChild(ccNumberInput);
-  creditCardDetails.appendChild(ccExpirationDateInput);
-  creditCardDetails.appendChild(expirationDateImage);
-  creditCardDetails.appendChild(ccCvvInput);
-  creditCardDetails.appendChild(ccZipCodeInput);
+  formCreditCard.appendChild(ccFirstNameInput);
+  formCreditCard.appendChild(ccLastNameInput);
+  formCreditCard.appendChild(ccNumberInput);
+  formCreditCard.appendChild(ccExpirationDateInput);
+  formCreditCard.appendChild(expirationDateImage);
+  formCreditCard.appendChild(ccCvvInput);
   // Append the forms to the sections
   userField.appendChild(formUser);
   billingField.appendChild(formBilling);
