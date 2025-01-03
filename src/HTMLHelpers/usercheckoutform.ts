@@ -1,4 +1,4 @@
-import { createUserCheckoutForm } from "./HTMLHelpers/userCheckoutFormHelper";
+import { createUserCheckoutForm } from "./userCheckoutFormHelper.ts";
 
 document
   .getElementById("form-container")
