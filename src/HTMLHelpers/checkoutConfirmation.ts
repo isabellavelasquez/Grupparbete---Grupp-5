@@ -1,3 +1,4 @@
+import "../styles/checkoutConfirmation.scss";
 const section = document.createElement("section");
 
 const articleText = document.createElement("article");
@@ -9,12 +10,16 @@ articleText.appendChild(paragraph);
 
 const articleImage = document.createElement("article");
 const image = document.createElement("img");
-image.src = "check_icon.png";
+image.src = "../../assets/icons/check_icon.png";
 image.alt = "purchase confirmation image";
+image.id = "confirmationImage";
 articleImage.appendChild(image);
 
 const articleButton = document.createElement("article");
+articleButton.id = "articleButton";
 const button = document.createElement("button");
+button.id = "returnButton";
+
 button.textContent = "Return to shopping";
 articleButton.appendChild(button);
 
@@ -27,5 +32,5 @@ document.body.appendChild(section);
 document.getElementById("confirmation-container")?.appendChild(section);
 
 button.addEventListener("click", () => {
-  window.location.href = "index.html";
+ window.location.href = "/index.html";
 });

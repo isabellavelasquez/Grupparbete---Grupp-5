@@ -85,7 +85,7 @@ export const createProductsHTML = () => {
 
     image.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
-      window.location.href = "/pages/productPage.html";
+      window.location.href = "../src/pages/productPage.html";
     });
   });
 };

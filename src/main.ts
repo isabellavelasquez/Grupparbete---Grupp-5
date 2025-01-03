@@ -1,7 +1,6 @@
 import "./style.scss";
 
 import { createProductsHTML } from "./HTMLHelpers/productsOverview";
-import { theBackButton } from "./HTMLHelpers/thebackbutton";
 
 localStorage.getItem("Cart");
 
@@ -17,6 +16,9 @@ if (input) {
 input?.classList.add("inputStyle");
 document.getElementById("searchBar")?.addEventListener("submit", (e) => {
   e.preventDefault();
+});
+h1?.addEventListener("click", () => {
+  window.location.href = "/";
 });
 
 const navbar = document.getElementById("navbar");
@@ -35,16 +37,15 @@ categoryContainer.appendChild(thirdCategory);
 navbar?.appendChild(categoryContainer);
 // cart icon top corner
 const cartIcon = document.createElement("img");
-cartIcon.src = "../assets/icons/cart.png";
+cartIcon.src = "../../assets/icons/cart.png";
 cartIcon.alt = "icon av shoppingvagn";
 cartIcon.id = "cartIcon";
 cartIcon.classList.add("cartButtonIcon");
 document.getElementById("header")?.appendChild(cartIcon);
 
 cartIcon.addEventListener("click", () => {
-  window.location.href = "/pages/cart.html";
+  window.location.href = "../../src/pages/cart.html";
   console.log("du klickade");
 });
 
 createProductsHTML();
-theBackButton("../assets/icons/back.arrow.png", "backbutton");

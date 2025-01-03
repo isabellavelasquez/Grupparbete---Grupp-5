@@ -1,6 +1,7 @@
 import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
 import { modalFunction } from "./modal";
+import { theBackButton } from "./thebackbutton";
 
 export const HTMLProductPage = () => {
   const selectedProduct = localStorage.getItem("selectedProduct");
@@ -74,3 +75,4 @@ export const HTMLProductPage = () => {
   }
 };
 HTMLProductPage();
+theBackButton("../../assets/icons/back.arrow.png", "backbutton");
