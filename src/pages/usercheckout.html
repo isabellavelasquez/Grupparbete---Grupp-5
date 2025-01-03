@@ -7,29 +7,24 @@
     <script
       defer
       type="module"
-      src="/src/HTMLHelpers/usercheckoutform.ts"
+      src="../HTMLHelpers/usercheckoutform.ts"
     ></script>
-    <script
-      type="module"
-      src="/src/HTMLHelpers/orderOverview.ts"
-      defer
-    ></script>
-    <link rel="stylesheet" href="/src/style.scss" />
+    <script type="module" src="../main.ts" defer></script>
+    <script type="module" src="../HTMLHelpers/orderOverview.ts" defer></script>
+    <link rel="stylesheet" href="../style.scss" />
     <link rel="stylesheet" href="/src/styles/usercheckout.scss" />
   </head>
   <body>
-    <header>
-      <h1 id="webShopName">Our Cool Webshop</h1>
-      <nav id="navbar">
+    <header id="header">
+      <h1 id="webShopName"></h1>
+      <nav id="nav">
         <ul class="categorys">
           <li>Order overview</li>
         </ul>
       </nav>
     </header>
-    <div id="pageWrapper">
-      <div id="orderOverview"></div>
-      <main id="form-container"></main>
-    </div>
+    <div id="orderOverview"></div>
+    <main id="form-container"></main>
     <footer></footer>
   </body>
 </html>

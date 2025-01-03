@@ -32,5 +32,5 @@ document.body.appendChild(section);
 document.getElementById("confirmation-container")?.appendChild(section);
 
 button.addEventListener("click", () => {
-  window.location.href = "/index.html";
+ window.location.href = "/index.html";
 });
