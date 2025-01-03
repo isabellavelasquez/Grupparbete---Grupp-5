@@ -2,6 +2,11 @@ import { Product } from "../Models/Product";
 import { cart } from "../services.ts/cartService";
 import { theBackButton } from "./thebackbutton";
 
+const cartIcon = document.getElementById("cartIcon");
+if (cartIcon) {
+  cartIcon.style.display = "none";
+}
+
 const displayProductsInCart = (cart: Map<Product, number>) => {
   localStorage.getItem("Cart");
   console.log(cart);
