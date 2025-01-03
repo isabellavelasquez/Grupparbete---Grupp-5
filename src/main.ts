@@ -35,16 +35,16 @@ categoryContainer.appendChild(thirdCategory);
 navbar?.appendChild(categoryContainer);
 // cart icon top corner
 const cartIcon = document.createElement("img");
-cartIcon.src = "../assets/icons/cart.png";
+cartIcon.src = "../../assets/icons/cart.png";
 cartIcon.alt = "icon av shoppingvagn";
 cartIcon.id = "cartIcon";
 cartIcon.classList.add("cartButtonIcon");
 document.getElementById("header")?.appendChild(cartIcon);
 
 cartIcon.addEventListener("click", () => {
-  window.location.href = "/pages/cart.html";
+  window.location.href = "../../src/pages/cart.html";
   console.log("du klickade");
 });
 
 createProductsHTML();
-theBackButton("../assets/icons/back.arrow.png", "backbutton");
+theBackButton("../../assets/icons/back.arrow.png", "backbutton");

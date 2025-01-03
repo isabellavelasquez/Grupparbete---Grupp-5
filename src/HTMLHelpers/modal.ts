@@ -8,7 +8,7 @@ export function modalFunction(product: Product) {
   pTag.innerHTML = product.title + " lades till i varukorgen";
   const aTag = document.createElement("a");
   aTag.innerHTML = "Visa";
-  aTag.href = "../src/pages/cart.html";
+  aTag.href = "../../src/pages/cart.html";
   const xIcon = document.createElement("img");
   xIcon.src = "../../assets/icons/x_icon.png";
   xIcon.alt = "x icon";

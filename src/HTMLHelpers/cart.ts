@@ -44,7 +44,7 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
       .getElementById("productsInCartContainer")
       ?.appendChild(checkoutButton)
       .addEventListener("click", () => {
-        window.location.href = "../src/pages/usercheckout.html";
+        window.location.href = "../../src/pages/usercheckout.html";
       });
   }
 };
