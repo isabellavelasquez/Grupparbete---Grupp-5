@@ -1,3 +1,4 @@
+import "../../styles/checkoutConfirmation.css";
 const section = document.createElement("section");
 
 const articleText = document.createElement("article");
@@ -9,7 +10,7 @@ articleText.appendChild(paragraph);
 
 const articleImage = document.createElement("article");
 const image = document.createElement("img");
-image.src = "check_icon.png";
+image.src = "../../assets/icons/check_icon.png";
 image.alt = "purchase confirmation image";
 articleImage.appendChild(image);
 
@@ -27,5 +28,5 @@ document.body.appendChild(section);
 document.getElementById("confirmation-container")?.appendChild(section);
 
 button.addEventListener("click", () => {
-  window.location.href = "index.html";
+  window.location.href = "/index.html";
 });
