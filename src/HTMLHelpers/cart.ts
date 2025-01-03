@@ -1,22 +1,24 @@
-import { Product } from "../Models/Product";
-import { cart } from "../services.ts/cartService";
+import { cart, getProductFromID, loadCart } from "../services.ts/cartService";
 
-const displayProductsInCart = (cart: Map<Product, number>) => {
+const displayProductsInCart = (cart: Map<string, number>) => {
 
-    localStorage.getItem("Cart");
-    console.log(cart);
     if (cart.size === 0) {
         const cartIsEmptyText = document.createElement("p");
         (cartIsEmptyText as HTMLParagraphElement).innerHTML = "Your cart is empty";
         document.getElementById("productsInCartContainer")?.appendChild(cartIsEmptyText)
         }
 
-    else {
-        const sortedProducts = Array.from(cart.entries()).sort(([productA], [productB]) => 
-        productA.title.localeCompare(productB.title))
+    // else {
+    //     const sortedProducts = Array.from(cart.entries()).sort(([productA], [productB]) => 
+    //     productA.title.localeCompare(productB.title))
     
-        for (const [product] of sortedProducts) { 
+        for (const [id] of cart) { 
 
+            const product = getProductFromID(id);
+            if (product === undefined) {
+                continue;
+            }
+            
             const productInCartContainer = document.createElement("div");
             productInCartContainer.id = "productInCartContainer";
             document.getElementById("productsInCartContainer")?.appendChild(productInCartContainer);
@@ -32,7 +34,7 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
             price.innerHTML = String(product.price) + " :-";
             
             const quantity = document.createElement("p");
-            (quantity as HTMLParagraphElement).innerHTML = String(cart.get(product)) + "x";
+            (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
 
             productInCartContainer.append(productImgInCart, title, price, quantity);
         }
@@ -42,7 +44,8 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
             window.location.href = "../pages/usercheckout.html";
         })
 
-    };
+    
     
 }
+loadCart();
 displayProductsInCart(cart);

@@ -1,11 +1,10 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
-import { addToCart } from "../services.ts/cartService";
+import { addToCart, getProductFromID, loadCart } from "../services.ts/cartService";
 import "../style.scss";
 import { modalFunction } from "./modal";
 
-localStorage.getItem("Cart");
-
+loadCart();
 
 export const products: Product[] = [
   new Product(
@@ -73,6 +72,9 @@ export const createProductsHTML = () => {
       addToCart(product);
       modalFunction(product);
       const cartIcon = document.getElementById("cartIcon");
+      cartIcon?.addEventListener("click", () =>  {
+        window.location.href = "/pages/cart.html";
+      })
       if (cartIcon) {
         cartIcon.classList.remove("animate");
         setTimeout(() => {
