@@ -39,7 +39,7 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
         const checkoutButton = document.createElement("button");
         (checkoutButton as HTMLButtonElement).innerHTML = "Proceed to checkout";
         document.getElementById("productsInCartContainer")?.appendChild(checkoutButton).addEventListener("click", () => {
-            window.location.href = "/usercheckout.html";
+            window.location.href = "../pages/usercheckout.html";
         })
 
     };
