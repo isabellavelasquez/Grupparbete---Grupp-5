@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script defer type="module" src="/src/usercheckoutform.ts"></script>
+    <script
+      type="module"
+      src="/src/HTMLHelpers/orderOverview.ts"
+      defer
+    ></script>
     <link rel="stylesheet" href="/src/style.scss" />
     <link rel="stylesheet" href="/src/usercheckout.scss" />
   </head>
   <body>
-        <header>
-          <h1 id="header">Title</h1>
-        </header>
-        <main id="form-container"></main>
-        <footer></footer>
-      </div>
+    <header>
+      <h1 id="webShopName">Our Cool Webshop</h1>
+      <nav id="navbar">
+        <ul class="categorys">
+          <li>Order overview</li>
+        </ul>
+      </nav>
+    </header>
+    <div id="pageWrapper">
+      <div id="orderOverview"></div>
+      <main id="form-container"></main>
+    </div>
+    <footer></footer>
   </body>
 </html>
