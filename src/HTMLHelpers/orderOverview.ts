@@ -2,6 +2,11 @@ import { Product } from "../Models/Product";
 import "../styles/orderOverview.scss";
 import { theBackButton } from "./thebackbutton";
 
+const cartIcon = document.getElementById("cartIcon");
+if (cartIcon) {
+  cartIcon.style.display = "none";
+}
+
 const orderviewDiv = document.getElementById("orderOverview");
 const h3 = document.createElement("h3");
 h3.innerHTML = "Your order";
