@@ -15,6 +15,10 @@ export function theBackButton( // Funktionen theBackButton tar emot två argumen
   div.appendChild(anchor);
   document.getElementById("header")?.appendChild(div);
 
+  div.addEventListener("click", () => {
+    window.location.href = "/";
+  });
+
   return div;
 }
 //Fri text funderingar: Undra om detta är bästa sättet att bygga en backbutton på?
