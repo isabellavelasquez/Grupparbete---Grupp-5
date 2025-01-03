@@ -36,8 +36,22 @@ export const HTMLProductPage = () => {
   minusBtn.innerHTML = "-";
   const plusBtn = document.createElement("button");
   plusBtn.innerHTML = "+";
-  minusBtn.addEventListener("click", () => {});
-  plusBtn.addEventListener("click", () => {});
+  minusBtn.addEventListener("click", () => {
+    if (product.amount > 1 && container) {
+      container.innerHTML = "";
+      product.amount = product.amount - 1;
+      localStorage.setItem("selectedProduct", JSON.stringify(product));
+      HTMLProductPage();
+    }
+  });
+  plusBtn.addEventListener("click", () => {
+    if (container) {
+      container.innerHTML = "";
+    }
+    product.amount = product.amount + 1;
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
+    HTMLProductPage();
+  });
 
   const addToCartBtn = document.createElement("button");
   addToCartBtn.classList.add("addToCartBtn");

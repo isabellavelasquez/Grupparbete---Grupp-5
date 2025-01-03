@@ -38,6 +38,7 @@ navbar?.appendChild(categoryContainer);
 const cartIcon = document.createElement("img");
 cartIcon.src = "../assets/icons/cart.png";
 cartIcon.alt = "icon av shoppingvagn";
+cartIcon.id = "cartIcon";
 cartIcon.classList.add("cartButtonIcon");
 document.getElementById("header")?.appendChild(cartIcon);
 

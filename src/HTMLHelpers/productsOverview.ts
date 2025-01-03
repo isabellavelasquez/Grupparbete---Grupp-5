@@ -1,6 +1,7 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
-import { addToCart, cart } from "../services.ts/cartService";
+import { addToCart } from "../services.ts/cartService";
+import "../style.scss";
 import { modalFunction } from "./modal";
 
 localStorage.getItem("Cart");
@@ -71,7 +72,13 @@ export const createProductsHTML = () => {
     quickAddButton.addEventListener("click", () => {
       addToCart(product);
       modalFunction(product);
-      console.log(cart);
+      const cartIcon = document.getElementById("cartIcon");
+      if (cartIcon) {
+        cartIcon.classList.remove("animate");
+        setTimeout(() => {
+          cartIcon.classList.add("animate");
+        }, 10);
+      }
     });
 
     image.addEventListener("click", () => {
