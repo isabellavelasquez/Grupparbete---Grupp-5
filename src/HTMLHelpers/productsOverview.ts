@@ -73,7 +73,7 @@ export const createProductsHTML = () => {
       modalFunction(product);
       const cartIcon = document.getElementById("cartIcon");
       cartIcon?.addEventListener("click", () =>  {
-        window.location.href = "/pages/cart.html";
+        window.location.href = "../src/pages/cart.html";
       })
       if (cartIcon) {
         cartIcon.classList.remove("animate");

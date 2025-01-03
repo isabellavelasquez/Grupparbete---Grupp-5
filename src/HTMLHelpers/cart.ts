@@ -2,25 +2,28 @@
 import { cart, getProductFromID, loadCart } from "../services.ts/cartService";
 import { theBackButton } from "./thebackbutton";
 
-const displayProductsInCart = (cart: Map<Product, number>) => {
+const displayProductsInCart = (cart: Map<string, number>) => {
 
-    localStorage.getItem("Cart");
-    console.log(cart);
     if (cart.size === 0) {
         const cartIsEmptyText = document.createElement("p");
         (cartIsEmptyText as HTMLParagraphElement).innerHTML = "Your cart is empty";
         document.getElementById("productsInCartContainer")?.appendChild(cartIsEmptyText)
         }
 
-    else {
-        const sortedProducts = Array.from(cart.entries()).sort(([productA], [productB]) => 
-        productA.title.localeCompare(productB.title))
+    // else {
+    //     const sortedProducts = Array.from(cart.entries()).sort(([productA], [productB]) => 
+    //     productA.title.localeCompare(productB.title))
     
-        for (const [product] of sortedProducts) { 
+    for (const [id] of cart) { 
 
-            const productInCartContainer = document.createElement("div");
-            productInCartContainer.id = "productInCartContainer";
-            document.getElementById("productsInCartContainer")?.appendChild(productInCartContainer);
+        const product = getProductFromID(id);
+        if (product === undefined) {
+        continue;
+        }
+            
+        const productInCartContainer = document.createElement("div");
+        productInCartContainer.id = "productInCartContainer";
+        document.getElementById("productsInCartContainer")?.appendChild(productInCartContainer);
 
         const productImgInCart = document.createElement("img");
         productImgInCart.src = product.imgSrc;
@@ -35,21 +38,13 @@ const displayProductsInCart = (cart: Map<Product, number>) => {
         const quantity = document.createElement("p");
         (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
 
-        const quantity = document.createElement("p");
-        (quantity as HTMLParagraphElement).innerHTML =
-        String(cart.get(id)) + "x";
-
-
       productInCartContainer.append(productImgInCart, title, price, quantity);
     }
     const checkoutButton = document.createElement("button");
     (checkoutButton as HTMLButtonElement).innerHTML = "Proceed to checkout";
-    document
-      .getElementById("productsInCartContainer")
-      ?.appendChild(checkoutButton)
-      .addEventListener("click", () => {
+    document.getElementById("productsInCartContainer")?.appendChild(checkoutButton).addEventListener("click", () => {
         window.location.href = "../../src/pages/usercheckout.html";
-      });
+    });
   
 };
 loadCart();
