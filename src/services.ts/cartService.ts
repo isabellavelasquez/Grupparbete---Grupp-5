@@ -9,7 +9,7 @@ export const addToCart = (product: Product) => {
     cart.set(product.id, currentAmount + 1);
     saveCart();
 }
-
+ 
 export const saveCart = () => {
     localStorage.setItem("Cart", JSON.stringify(Array.from(cart.entries())));   
 }

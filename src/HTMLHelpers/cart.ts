@@ -1,5 +1,5 @@
 
-import { cart, getProductFromID, loadCart } from "../services.ts/cartService";
+import { cart, getProductFromID, loadCart, saveCart } from "../services.ts/cartService";
 import { theBackButton } from "./thebackbutton";
 
 const displayProductsInCart = (cart: Map<string, number>) => {
@@ -38,7 +38,18 @@ const displayProductsInCart = (cart: Map<string, number>) => {
         const quantity = document.createElement("p");
         (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
 
-      productInCartContainer.append(productImgInCart, title, price, quantity);
+        const deleteButton = document.createElement("img");
+        deleteButton.src = "assets/icons/trash.png"
+
+        productInCartContainer.append(productImgInCart, title, price, quantity, deleteButton);
+
+        deleteButton.addEventListener("click", () => {
+            cart.delete(id);
+            saveCart();
+            const entireCart = document.getElementById("productsInCartContainer");
+            (entireCart as HTMLDivElement).innerHTML = "";
+            displayProductsInCart(cart);
+        })
     }
     const checkoutButton = document.createElement("button");
     (checkoutButton as HTMLButtonElement).innerHTML = "Proceed to checkout";
