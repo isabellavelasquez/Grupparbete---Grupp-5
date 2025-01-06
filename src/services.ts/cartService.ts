@@ -1,7 +1,16 @@
+import { displayProductsInCart } from "../HTMLHelpers/cart";
 import { products } from "../HTMLHelpers/productsOverview";
 import { Product } from "../Models/Product";
 
 export let cart:Map<string, number> = new Map<string, number>();
+
+export const loadCart = () => {
+    cart = new Map<string, number>(JSON.parse(localStorage.getItem("Cart") || "[]"));
+}
+
+export const saveCart = () => {
+    localStorage.setItem("Cart", JSON.stringify(Array.from(cart.entries())));   
+}
 
 export const addToCart = (product: Product) => {
     loadCart();
@@ -9,13 +18,15 @@ export const addToCart = (product: Product) => {
     cart.set(product.id, currentAmount + 1);
     saveCart();
 }
- 
-export const saveCart = () => {
-    localStorage.setItem("Cart", JSON.stringify(Array.from(cart.entries())));   
-}
 
-export const loadCart = () => {
-    cart = new Map<string, number>(JSON.parse(localStorage.getItem("Cart") || "[]"));
+export const removeFromCart = (product: Product) => {
+    loadCart();
+    const currentAmount = cart.get(product.id) || 0;
+
+    if (currentAmount > 0) {
+        cart.delete(product.id);
+    }
+
 }
 
 export const getProductFromID = (id: string) :Product | undefined => {
@@ -26,3 +37,5 @@ export const getProductFromID = (id: string) :Product | undefined => {
     };
     return undefined;
 }
+
+
