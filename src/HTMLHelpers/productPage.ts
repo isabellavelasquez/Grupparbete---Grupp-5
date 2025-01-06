@@ -2,6 +2,7 @@ import { Product } from "../Models/Product";
 import { addToCart } from "../services.ts/cartService";
 import { modalFunction } from "./modal";
 import { theBackButton } from "./thebackbutton";
+import "../styles/productPage.scss";
 
 export const HTMLProductPage = () => {
   const selectedProduct = localStorage.getItem("selectedProduct");
