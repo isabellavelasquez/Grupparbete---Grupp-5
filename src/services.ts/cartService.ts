@@ -1,4 +1,3 @@
-import { displayProductsInCart } from "../HTMLHelpers/cart";
 import { products } from "../HTMLHelpers/productsOverview";
 import { Product } from "../Models/Product";
 
