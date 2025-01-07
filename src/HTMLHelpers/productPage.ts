@@ -59,7 +59,9 @@ export const HTMLProductPage = () => {
   addToCartBtn.classList.add("addToCartBtn");
   addToCartBtn.innerHTML = "Lägg till";
   addToCartBtn.addEventListener("click", () => {
-    addToCart(product);
+    for (let i = 0; i < product.amount; i++) {
+      addToCart(product);
+    }
     modalFunction(product);
   });
 
