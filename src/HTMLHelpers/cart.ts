@@ -39,7 +39,7 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
 
             const deleteButton = document.createElement("img");
-            deleteButton.src = "assets/icons/trash.png"
+            deleteButton.src = "assets/icons/trash_can.png"
 
             productInCartContainer.append(productImgInCart, title, price, quantity, deleteButton);
 
