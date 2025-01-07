@@ -1,6 +1,8 @@
 import { Product } from "../Models/Product";
+import { cart, loadCart } from "../services.ts/cartService";
 import "../styles/orderOverview.scss";
 import { theBackButton } from "./thebackbutton";
+import { products } from "./productsOverview";
 
 const cartIcon = document.getElementById("cartIcon");
 if (cartIcon) {
@@ -12,61 +14,32 @@ const h3 = document.createElement("h3");
 h3.innerHTML = "Your order";
 orderviewDiv?.appendChild(h3);
 
-export const products: Product[] = [
-  new Product(
-    "Shirt",
-    100,
-    "../../assets/products/Blue shirt.png",
-    "Blue Shirt",
-    "En stickad tröja med avslappnad passform tillverkad av en mjuk blandning av återvunnen polyamid och återvunnen polyester, utökad med en touch av återvunnen elastan och ull för extra stretch och värme. Den har en rund ribbad halsringning, droppade axlar och ribbade kanter.",
-    "abc123",
-    1
-  ),
-  new Product(
-    "Red dress",
-    250,
-    "../../assets/products/Red dress.png",
-    "Red Dress",
-    "Klänning med jacquardvävt mönster. Rundad midja med rynk. Dold dragkedja mitt bak. Fodrad upptill.",
-    "abc124",
-    1
-  ),
-  new Product(
-    "Boots",
-    300,
-    "../../assets/products/Boots.png",
-    "Boots",
-    "Ett par chelseaboots med resår i sidorna och hälla bak. Foder och innersula i satin.",
-    "abc125",
-    1
-  ),
-  new Product(
-    "Red bag",
-    250,
-    "../../assets/products/Red bag.png",
-    "Red bag",
-    "En crossbody-väska med två separata fack och dolt magnetlås. Väskan har reglerbar axelrem och reglerbart handtag med klätt spänne i vardera sida. Fodrad. Djup 9 cm. Höjd 23 cm. Bredd 26 cm",
-    "abc1237",
-    1
-  ),
-];
 const orderViewHMTL = () => {
-  products.forEach((product) => {
-    const productsContainer = document.createElement("div");
-    const img = document.createElement("img");
-    img.src = product.imgSrc;
-    img.alt = product.imgAlt;
-    const title = document.createElement("h4");
-    title.innerHTML = product.title;
-    const amount = document.createElement("p");
-    amount.innerHTML = "Amount: " + product.amount;
-    amount.classList.add("pTagAmount");
-    const sum = document.createElement("p");
-    sum.innerHTML = String(product.amount * product.price) + " :-";
-    sum.classList.add("sumPtag");
+  loadCart();
+  const productsFromCart = Array.from(cart.entries());
+  console.log(productsFromCart);
 
-    productsContainer.append(img, title, amount, sum);
-    orderviewDiv?.appendChild(productsContainer);
+  productsFromCart.forEach((productFromLocalS) => {
+    const productAmount = productFromLocalS[1];
+    const productID: string = productFromLocalS[0];
+    const product = products.find((product) => product.id === productID);
+    if (product) {
+      const productsContainer = document.createElement("div");
+      const img = document.createElement("img");
+      img.src = product.imgSrc;
+      img.alt = product.imgAlt;
+      const title = document.createElement("h4");
+      title.innerHTML = product.title;
+      const amount = document.createElement("p");
+      amount.innerHTML = "Amount: " + productAmount;
+      amount.classList.add("pTagAmount");
+      const sum = document.createElement("p");
+      sum.innerHTML = String(product.amount * product.price) + " :-";
+      sum.classList.add("sumPtag");
+
+      productsContainer.append(img, title, amount, sum);
+      orderviewDiv?.appendChild(productsContainer);
+    }
   });
   const totalSum = document.createElement("p");
   totalSum.classList.add("totalSum");
