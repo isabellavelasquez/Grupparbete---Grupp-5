@@ -68,7 +68,7 @@ export const products: Product[] = [
   new Product(
     "Adidas sneakers",
     500,
-    "../../assets/products/sneakers.png",
+    "../../assets/products/Adidas.png",
     "Adidas sneakers",
     "Adidas Spezial is an updated handball shoe from the late 70s. This modern version features a suede upper, ADIPRENE®+ for cushioning, and TORSION® SYSTEM for comfort and support.",
     "adidas-sneakers1",
