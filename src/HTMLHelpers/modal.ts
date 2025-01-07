@@ -1,4 +1,5 @@
 import { Product } from "../Models/Product";
+import "../styles/modal.scss";
 
 export function modalFunction(product: Product) {
   const header = document.getElementById("header");

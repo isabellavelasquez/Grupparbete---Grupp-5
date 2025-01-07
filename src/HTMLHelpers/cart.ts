@@ -57,7 +57,6 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             window.location.href = "../../src/pages/usercheckout.html";
         });
     }
-  
 };
 loadCart();
 displayProductsInCart(cart);
