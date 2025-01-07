@@ -12,7 +12,6 @@ export const saveCart = () => {
 }
 
 export const addToCart = (product: Product) => {
-    loadCart();
     const currentAmount = cart.get(product.id) || 0;
     cart.set(product.id, currentAmount + 1);
     saveCart();
