@@ -1,5 +1,5 @@
 
-import { cart, getProductFromID, loadCart, saveCart, } from "../services.ts/cartService";
+import { addToCart, cart, getProductFromID, loadCart, removeFromCart, saveCart, } from "../services.ts/cartService";
 import { theBackButton } from "./thebackbutton";
 
 export const displayProductsInCart = (cart: Map<string, number>) => {
@@ -10,9 +10,6 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
         document.getElementById("productsInCartContainer")?.appendChild(cartIsEmptyText)
     }
 
-    // else {
-    //     const sortedProducts = Array.from(cart.entries()).sort(([productA], [productB]) => 
-    //     productA.title.localeCompare(productB.title))
     else {
         for (const [id] of cart) { 
 
@@ -38,10 +35,35 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             const quantity = document.createElement("p");
             (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
 
-            const deleteButton = document.createElement("img");
-            deleteButton.src = "assets/icons/trash.png"
+            const minusBtn = document.createElement("button");
+            minusBtn.innerHTML = "-";
 
-            productInCartContainer.append(productImgInCart, title, price, quantity, deleteButton);
+            const plusBtn = document.createElement("button");
+            plusBtn.innerHTML = "+";    
+
+            plusBtn.addEventListener("click", () => {
+                addToCart(product);
+                quantity.innerHTML = String(cart.get(id)) + "x";
+            })
+
+            minusBtn.addEventListener("click", () => {
+                let currentAmount = cart.get(product.id) || 0;
+
+                if (currentAmount > 1) {
+                    cart.set(product.id, currentAmount - 1);
+                    saveCart();
+                    quantity.innerHTML = String(cart.get(id)) + "x";
+                }
+                else {
+                    removeFromCart(product);
+                }
+            });
+
+            const deleteButton = document.createElement("img");
+            deleteButton.id = "deleteButton";
+            deleteButton.src = "../../assets/icons/trash_can.png"
+
+            productInCartContainer.append(productImgInCart, title, price, quantity, plusBtn, minusBtn, deleteButton);
 
             deleteButton.addEventListener("click", () => {
                 cart.delete(id);

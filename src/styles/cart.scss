@@ -1,4 +1,8 @@
 #productsInCartContainer {
     display: flex;
     flex-direction: column;
+
+    & #deleteButton {
+        height: 2em;
+    }
 }
