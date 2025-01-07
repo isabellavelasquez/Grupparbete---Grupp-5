@@ -1,6 +1,10 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
-import { addToCart, getProductFromID, loadCart } from "../services.ts/cartService";
+import {
+  addToCart,
+  getProductFromID,
+  loadCart,
+} from "../services.ts/cartService";
 import "../style.scss";
 import { modalFunction } from "./modal";
 
@@ -12,7 +16,7 @@ export const products: Product[] = [
     100,
     "../../assets/products/Blue shirt.png",
     "Blue Shirt",
-    "En stickad tröja med avslappnad passform tillverkad av en mjuk blandning av återvunnen polyamid och återvunnen polyester, utökad med en touch av återvunnen elastan och ull för extra stretch och värme. Den har en rund ribbad halsringning, droppade axlar och ribbade kanter.",
+    "A knitted sweater with a relaxed fit made from a soft blend of recycled polyamide and recycled polyester, enhanced with a touch of recycled elastane and wool for extra stretch and warmth. It features a round ribbed neckline, dropped shoulders, and ribbed edges.",
     "blue-shirt1",
     1
   ),
@@ -21,7 +25,7 @@ export const products: Product[] = [
     250,
     "../../assets/products/Red dress.png",
     "Red Dress",
-    "Klänning med jacquardvävt mönster. Rundad midja med rynk. Dold dragkedja mitt bak. Fodrad upptill.",
+    "Dress with jacquard pattern. Rounded waist with gathers. Hidden zipper at the back. Lined at the top.",
     "red-dress1",
     1
   ),
@@ -30,7 +34,7 @@ export const products: Product[] = [
     300,
     "../../assets/products/Boots.png",
     "Boots",
-    "Ett par chelseaboots med resår i sidorna och hälla bak. Foder och innersula i satin.",
+    "A pair of Chelsea boots with elastic sides and a pull tab at the back. Lining and insole in satin.",
     "boots1",
     1
   ),
@@ -39,8 +43,116 @@ export const products: Product[] = [
     250,
     "../../assets/products/Red bag.png",
     "Red bag",
-    "En crossbody-väska med två separata fack och dolt magnetlås. Väskan har reglerbar axelrem och reglerbart handtag med klätt spänne i vardera sida. Fodrad. Djup 9 cm. Höjd 23 cm. Bredd 26 cm",
+    "A crossbody bag with two separate compartments and a hidden magnetic lock. The bag has an adjustable shoulder strap and an adjustable handle with covered buckles on each side. Lined. Depth 9 cm. Height 23 cm. Width 26 cm.",
     "red-bag1",
+    1
+  ),
+  new Product(
+    "Blue overshirt",
+    400,
+    "../../assets/products/Blue overshirt.png",
+    "Blue overshirt",
+    "A shirt with double fabric layers in a wool blend. Regular fit, chest pockets on the outside, and flat corozo buttons. Made of 60% RWS wool certified by Control Union (893290). Products certified according to the Responsible Wool Standard (RWS) contain wool fibers from farms that are certified according to animal welfare and land management requirements.",
+    "blue-overshirt1",
+    1
+  ),
+  new Product(
+    "Blue Dress Shirt",
+    200,
+    "../../assets/products/blueshirtdress.png",
+    "Blue Dress Shirt",
+    "A cotton poplin shirt with a button placket, a chest pocket, buttoned cuffs, and a rounded hem. Loose fit.The model is 183cm/6'0 and wears size 50",
+    "blue-dress-shirt1",
+    1
+  ),
+  new Product(
+    "Adidas sneakers",
+    500,
+    "../../assets/products/Adidas.png",
+    "Adidas sneakers",
+    "Adidas Spezial is an updated handball shoe from the late 70s. This modern version features a suede upper, ADIPRENE®+ for cushioning, and TORSION® SYSTEM for comfort and support.",
+    "adidas-sneakers1",
+    1
+  ),
+  new Product(
+    "Workwear Jacket",
+    300,
+    "../../assets/products/beige jacket.png",
+    "Workwear Jacket",
+    "Workwear-inspired jacket in cotton canvas with a corduroy collar. Zipper at the front and buttoned cuffs. A chest pocket with a zipper, slanted front pockets, and an inner pocket. Regular fit.",
+    "workwear-jacket1",
+    1
+  ),
+  new Product(
+    "Coral Denim Jeans",
+    150,
+    "../../assets/products/coral denim.png",
+    "Coral Denim Jeans",
+    "5-pocket jeans in washed stretch denim with a high waist, zip fly, and button. Slim legs with raw-edge hems.CORAL in non-stretch denim has a high waist, loose fit, and wide legs. CORAL in non-stretch denim has a high waist, loose fit, and wide legs.",
+    "coral-denim-jeans1",
+    1
+  ),
+  new Product(
+    "The Park Denim",
+    200,
+    "../../assets/products/parkdenim.png",
+    "The Park Denim",
+    "PARK in non-stretch denim has a mid-rise waist, classic fit, and straight, slightly tapered legs from the knee down. Button fly.",
+    "the-park-denim1",
+    1
+  ),
+  new Product(
+    "Redness T-shirt",
+    100,
+    "../../assets/products/Tshirtred.png",
+    "Redness T-shirt",
+    "Unisex t-shirt with print on the front and back. Short-sleeved t-shirt in medium-weight cotton jersey at 220 gsm. Boxy fit. This product is part of the C-J-FReY-ISSA CAFÉ collection with illustrations by Olga Prader.",
+    "redness-tshirt1",
+    1
+  ),
+  new Product(
+    "V Dress",
+    250,
+    "../../assets/products/biege dress.png",
+    "V Dress",
+    "Knitted maxi dress in wool with a V-neck. Long sleeves and a straight silhouette. The dress contains 100% RWS wool (TE-00047206). Products certified according to the Responsible Wool Standard (RWS) contain wool fibers from farms that are certified according to animal welfare and land management requirements.",
+    "v-dress1",
+    1
+  ),
+  new Product(
+    "Cash$mere",
+    500,
+    "../../assets/products/cash.png",
+    "Cash$mere",
+    "Turtleneck sweater in cashmere and a bit of merino wool for extra strength. Raglan sleeves and ribbed details.",
+    "cashmere1",
+    1
+  ),
+  new Product(
+    "Tennis Shirt",
+    200,
+    "../../assets/products/tennisred.png",
+    "Tennis Shirt",
+    "Tennis shirt in cotton with a loose fit. The fabric has a looped back that has moisture-wicking properties. Collar and button placket. Ribbed cuffs.",
+    "tennis-shirt1",
+    1
+  ),
+  new Product(
+    "The Brownie Sweatshirt",
+    150,
+    "../../assets/products/brownsweatshirt.png",
+    "The Brownie Sweatshirt",
+    "Sweatshirt in soft, organic cotton fabric with a printed design. Round neckline, long sleeves, and ribbing at the cuffs and hem. Soft, brushed inside.",
+    "the-brownie-sweatshirt1",
+    1
+  ),
+  new Product(
+    "The Grayest Swedish Jacket",
+    300,
+    "../../assets/products/jacketgray.png",
+    "The Grayest Swedish Jacket",
+    "Jacket in a double-woven fabric of a wool blend. Stand-up collar, front button closure, and slanted flap pockets. The jacket contains 80% RWS wool (TE-00047206). Products certified according to the Responsible Wool Standard (RWS) contain wool fibers from farms that are certified according to animal welfare and land management requirements.",
+    "the-grayest-swedish-jacket1",
     1
   ),
 ];
@@ -72,9 +184,9 @@ export const createProductsHTML = () => {
       addToCart(product);
       modalFunction(product);
       const cartIcon = document.getElementById("cartIcon");
-      cartIcon?.addEventListener("click", () =>  {
+      cartIcon?.addEventListener("click", () => {
         window.location.href = "../src/pages/cart.html";
-      })
+      });
       if (cartIcon) {
         cartIcon.classList.remove("animate");
         setTimeout(() => {
