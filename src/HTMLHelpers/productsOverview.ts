@@ -1,6 +1,10 @@
 import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
-import { addToCart, getProductFromID, loadCart } from "../services.ts/cartService";
+import {
+  addToCart,
+  getProductFromID,
+  loadCart,
+} from "../services.ts/cartService";
 import "../style.scss";
 import { modalFunction } from "./modal";
 
@@ -12,7 +16,7 @@ export const products: Product[] = [
     100,
     "../../assets/products/Blue shirt.png",
     "Blue Shirt",
-    "En stickad tröja med avslappnad passform tillverkad av en mjuk blandning av återvunnen polyamid och återvunnen polyester, utökad med en touch av återvunnen elastan och ull för extra stretch och värme. Den har en rund ribbad halsringning, droppade axlar och ribbade kanter.",
+    "A knitted sweater with a relaxed fit made from a soft blend of recycled polyamide and recycled polyester, enhanced with a touch of recycled elastane and wool for extra stretch and warmth. It features a round ribbed neckline, dropped shoulders, and ribbed edges.",
     "blue-shirt1",
     1
   ),
@@ -21,7 +25,7 @@ export const products: Product[] = [
     250,
     "../../assets/products/Red dress.png",
     "Red Dress",
-    "Klänning med jacquardvävt mönster. Rundad midja med rynk. Dold dragkedja mitt bak. Fodrad upptill.",
+    "Dress with jacquard pattern. Rounded waist with gathers. Hidden zipper at the back. Lined at the top.",
     "red-dress1",
     1
   ),
@@ -30,7 +34,7 @@ export const products: Product[] = [
     300,
     "../../assets/products/Boots.png",
     "Boots",
-    "Ett par chelseaboots med resår i sidorna och hälla bak. Foder och innersula i satin.",
+    "A pair of Chelsea boots with elastic sides and a pull tab at the back. Lining and insole in satin.",
     "boots1",
     1
   ),
@@ -39,7 +43,7 @@ export const products: Product[] = [
     250,
     "../../assets/products/Red bag.png",
     "Red bag",
-    "En crossbody-väska med två separata fack och dolt magnetlås. Väskan har reglerbar axelrem och reglerbart handtag med klätt spänne i vardera sida. Fodrad. Djup 9 cm. Höjd 23 cm. Bredd 26 cm",
+    "A crossbody bag with two separate compartments and a hidden magnetic lock. The bag has an adjustable shoulder strap and an adjustable handle with covered buckles on each side. Lined. Depth 9 cm. Height 23 cm. Width 26 cm.",
     "red-bag1",
     1
   ),
@@ -72,9 +76,9 @@ export const createProductsHTML = () => {
       addToCart(product);
       modalFunction(product);
       const cartIcon = document.getElementById("cartIcon");
-      cartIcon?.addEventListener("click", () =>  {
+      cartIcon?.addEventListener("click", () => {
         window.location.href = "../src/pages/cart.html";
-      })
+      });
       if (cartIcon) {
         cartIcon.classList.remove("animate");
         setTimeout(() => {
