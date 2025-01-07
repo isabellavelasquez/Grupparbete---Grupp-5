@@ -11,7 +11,7 @@ if (h1) {
 }
 const input = document.getElementById("searchInput");
 if (input) {
-  (input as HTMLInputElement).placeholder = "Sök efter vara..";
+  (input as HTMLInputElement).placeholder = "Search for item..";
 }
 input?.classList.add("inputStyle");
 document.getElementById("searchBar")?.addEventListener("submit", (e) => {
@@ -27,9 +27,9 @@ categoryContainer.classList.add("categorys");
 const firstCategory = document.createElement("li");
 firstCategory.innerHTML = "Man";
 const secondCategory = document.createElement("li");
-secondCategory.innerHTML = "Kvinna";
+secondCategory.innerHTML = "Women";
 const thirdCategory = document.createElement("li");
-thirdCategory.innerHTML = "Barn";
+thirdCategory.innerHTML = "Kids";
 
 categoryContainer.appendChild(firstCategory);
 categoryContainer.appendChild(secondCategory);
