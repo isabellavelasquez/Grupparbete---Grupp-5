@@ -95,3 +95,11 @@ if (ccCvvInput) {
     return /^\d{3}$/.test(value);
   });
 }
+const submitButton = document.querySelector("button[type='submit']");
+if (submitButton) {
+  submitButton.addEventListener("click", () => {
+    window.location.href = "/pages/order-confirmation.html";
+    // if (userForm?.checkValidity() && formCreditCard?.checkValidity()) {
+    //   alert("Order placed successfully");
+  });
+}
