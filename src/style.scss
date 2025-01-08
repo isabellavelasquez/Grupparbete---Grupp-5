@@ -83,3 +83,10 @@ animation wobble-vertical-left {
     }
   }
 }
+
+@media (max-width: 600px) {
+  #webShopName {
+    font-size: medium;
+  }
+  
+}
