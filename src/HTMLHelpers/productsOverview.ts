@@ -50,7 +50,7 @@ export const products: Product[] = [
   new Product(
     "Blue overshirt",
     400,
-    "../../assets/products/Blue overshirt.png",
+    "../../assets/products/Blueovershirt.png",
     "Blue overshirt",
     "A shirt with double fabric layers in a wool blend. Regular fit, chest pockets on the outside, and flat corozo buttons. Made of 60% RWS wool certified by Control Union (893290). Products certified according to the Responsible Wool Standard (RWS) contain wool fibers from farms that are certified according to animal welfare and land management requirements.",
     "blue-overshirt1",
