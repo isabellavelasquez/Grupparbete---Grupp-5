@@ -1,0 +1,26 @@
+@mixin font-style {
+  color: white;
+  font-style: italic;
+}
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+  .contact {
+    grid-column: 1/2;
+    @include font-style();
+  }
+  ul {
+    grid-column: 1/2;
+    list-style-type: none;
+    @include font-style();
+  }
+  .paymentCards {
+    img {
+      height: 40px;
+    }
+  }
+  .webshopName {
+    @include font-style();
+  }
+}
