@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "TestFont";
+  src: url("../assets/fonts/testfont_VolkoSans-PosterLight.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 header {
   h1,
   form {
@@ -5,6 +13,12 @@ header {
     justify-content: center;
     margin-top: 80px;
     font-size: 44px;
+  }
+  h1 {
+    font-family: "TestFont";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
   }
   form {
     margin-top: 20px;
