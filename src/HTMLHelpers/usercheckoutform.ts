@@ -97,8 +97,9 @@ if (ccCvvInput) {
 }
 const submitButton = document.querySelector("button[type='submit']");
 if (submitButton) {
-  submitButton.addEventListener("click", () => {
-    window.location.href = "/pages/order-confirmation.html";
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "/src/pages/checkoutConfirmation.html";
     // if (userForm?.checkValidity() && formCreditCard?.checkValidity()) {
     //   alert("Order placed successfully");
   });
