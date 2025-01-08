@@ -61,14 +61,23 @@ pTag.classList.add("contact");
 const ul = document.createElement("ul");
 const nameHolder1 = document.createElement("li");
 nameHolder1.innerHTML = "CJ";
+const aTag1 = document.createElement("a");
+aTag1.href = "https://www.linkedin.com/in/carl-johan-viklund-b70b79335/";
+aTag1.appendChild(nameHolder1);
 const nameHolder2 = document.createElement("li");
 nameHolder2.innerHTML = "Isabella";
+const aTag2 = document.createElement("a");
+aTag2.href = "https://www.linkedin.com/in/freja-edberg-090489345/";
+aTag2.appendChild(nameHolder2);
 const nameHolder3 = document.createElement("li");
 nameHolder3.innerHTML = "Freja";
+const aTag3 = document.createElement("a");
+aTag3.href = "https://www.linkedin.com/in/freja-edberg-090489345/";
+aTag3.appendChild(nameHolder3);
 const phoneHolder = document.createElement("li");
 phoneHolder.innerHTML = "070- 123 45 67";
 
-ul.append(nameHolder1, nameHolder2, nameHolder3, phoneHolder);
+ul.append(aTag1, aTag2, aTag3, phoneHolder);
 
 const paymentDiv = document.createElement("div");
 paymentDiv.classList.add("paymentCards");
