@@ -9,3 +9,13 @@
       margin: 2vh;
     }
   }
+
+  @media (max-width: 600px) {
+    #productContainer {
+      width: 100%;
+  
+      img {
+        max-height: 50vh;
+      }
+    }
+  }
