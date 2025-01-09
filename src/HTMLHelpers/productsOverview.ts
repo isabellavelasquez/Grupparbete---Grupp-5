@@ -1,8 +1,6 @@
-import { HTMLProductPage } from "./productPage";
 import { Product } from "../Models/Product";
 import {
   addToCart,
-  getProductFromID,
   loadCart,
 } from "../services.ts/cartService";
 import "../style.scss";
@@ -160,11 +158,11 @@ export const products: Product[] = [
 export const createProductsHTML = () => {
   products.forEach((product) => {
     const productDiv = document.createElement("div");
-    productDiv.id = "productContainer";
+    productDiv.classList.add("productContainer");
 
-    const image = document.createElement("img");
-    image.src = product.imgSrc;
-    image.alt = product.imgAlt;
+    const poster = document.createElement("img");
+    poster.src = product.imgSrc;
+    poster.alt = product.imgAlt;
 
     const title = document.createElement("h2");
     (title as HTMLHeadingElement).innerHTML = product.title;
@@ -176,7 +174,7 @@ export const createProductsHTML = () => {
     quickAddButton.innerHTML = "Add to cart";
     quickAddButton.id = "qickAddButton";
 
-    productDiv.append(image, title, price, quickAddButton);
+    productDiv.append(poster, title, price, quickAddButton);
 
     document.getElementById("productsContainer")?.appendChild(productDiv);
 
@@ -184,18 +182,15 @@ export const createProductsHTML = () => {
       addToCart(product);
       modalFunction(product);
       const cartIcon = document.getElementById("cartIcon");
-      cartIcon?.addEventListener("click", () => {
-        window.location.href = "../src/pages/cart.html";
-      });
-      if (cartIcon) {
-        cartIcon.classList.remove("animate");
-        setTimeout(() => {
-          cartIcon.classList.add("animate");
-        }, 10);
-      }
+        if (cartIcon) {
+              cartIcon.classList.remove("animate");
+              setTimeout(() => {
+                cartIcon.classList.add("animate");
+              }, 10);
+        }
     });
 
-    image.addEventListener("click", () => {
+    poster.addEventListener("click", () => {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
       window.location.href = "../src/pages/productPage.html";
     });

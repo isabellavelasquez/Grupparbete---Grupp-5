@@ -47,7 +47,6 @@ document.getElementById("header")?.appendChild(cartIcon);
 
 cartIcon.addEventListener("click", () => {
   window.location.href = "../../src/pages/cart.html";
-  console.log("du klickade");
 });
 
 createProductsHTML();

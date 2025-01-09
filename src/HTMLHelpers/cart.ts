@@ -1,12 +1,12 @@
 
-import { addToCart, cart, getProductFromID, loadCart, removeFromCart, saveCart, } from "../services.ts/cartService";
+import { addToCart, cart, getProductFromID, loadCart, saveCart, } from "../services.ts/cartService";
 import { theBackButton } from "./thebackbutton";
 
 export const displayProductsInCart = (cart: Map<string, number>) => {
 
     if (cart.size === 0) {
         const cartIsEmptyText = document.createElement("p");
-        (cartIsEmptyText as HTMLParagraphElement).innerHTML = "Your cart is empty";
+        cartIsEmptyText.innerHTML = "Your cart is empty";
         document.getElementById("productsInCartContainer")?.appendChild(cartIsEmptyText)
     }
 
@@ -27,13 +27,13 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             productImgInCart.alt = product.imgAlt;
             
             const title = document.createElement("h2");
-            (title as HTMLHeadingElement).innerHTML = product.title;
+            title.innerHTML = product.title;
             
             const price = document.createElement("p");
             price.innerHTML = String(product.price) + " :-";
             
             const quantity = document.createElement("p");
-            (quantity as HTMLParagraphElement).innerHTML = String(cart.get(id)) + "x";
+            quantity.innerHTML = String(cart.get(id)) + "x";
 
             const minusBtn = document.createElement("button");
             minusBtn.innerHTML = "-";
@@ -47,16 +47,16 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             })
 
             minusBtn.addEventListener("click", () => {
-                let currentAmount = cart.get(product.id) || 0;
+                let currentAmount = cart.get(id) || 0;
 
                 if (currentAmount > 1) {
                     cart.set(product.id, currentAmount - 1);
                     saveCart();
                     quantity.innerHTML = String(cart.get(id)) + "x";
                 }
-                else {
-                    removeFromCart(product);
-                }
+                // else {
+                //     removeFromCart(product);
+                // }
             });
 
             const deleteButton = document.createElement("img");
@@ -74,7 +74,7 @@ export const displayProductsInCart = (cart: Map<string, number>) => {
             }) 
         }
         const checkoutButton = document.createElement("button");
-        (checkoutButton as HTMLButtonElement).innerHTML = "Proceed to checkout";
+        checkoutButton.innerHTML = "Proceed to checkout";
         checkoutButton.id = "checkoutButton";
         document.getElementById("productsInCartContainer")?.appendChild(checkoutButton).addEventListener("click", () => {
             window.location.href = "../../src/pages/usercheckout.html";
