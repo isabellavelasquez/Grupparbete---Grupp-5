@@ -17,15 +17,15 @@ export const addToCart = (product: Product) => {
     saveCart();
 }
 
-export const removeFromCart = (product: Product) => {
-    loadCart();
-    const currentAmount = cart.get(product.id) || 0;
+// export const removeFromCart = (product: Product) => {
+//     loadCart();
+//     const currentAmount = cart.get(product.id) || 0;
 
-    if (currentAmount > 0) {
-        cart.delete(product.id);
-    }
+//     if (currentAmount > 0) {
+//         cart.delete(product.id);
+//     }
 
-}
+// }
 
 export const getProductFromID = (id: string) :Product | undefined => {
     for (let i = 0; i<products.length; i++) {

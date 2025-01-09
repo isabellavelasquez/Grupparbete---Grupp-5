@@ -5,13 +5,13 @@
     margin: 2vh;
     justify-content: center;
   
-    & #productContainer {
+    & .productContainer {
       margin: 2vh;
     }
   }
 
   @media (max-width: 600px) {
-    #productContainer {
+    .productContainer {
       width: 100%;
   
       img {

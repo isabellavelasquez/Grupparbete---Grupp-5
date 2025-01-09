@@ -63,6 +63,13 @@ export const HTMLProductPage = () => {
       addToCart(product);
     }
     modalFunction(product);
+    const cartIcon = document.getElementById("cartIcon");
+    if (cartIcon) {
+          cartIcon.classList.remove("animate");
+          setTimeout(() => {
+            cartIcon.classList.add("animate");
+          }, 10);
+    }
   });
 
   amountDiv.append(minusBtn, amount, plusBtn);
