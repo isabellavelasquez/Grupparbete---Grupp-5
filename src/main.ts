@@ -1,5 +1,6 @@
 import "./style.scss";
 import "./styles/footer.scss";
+import "./styles/cartbutton.scss";
 
 import { createProductsHTML } from "./HTMLHelpers/productsOverview";
 
