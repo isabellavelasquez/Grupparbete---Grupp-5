@@ -65,16 +65,16 @@ export const HTMLProductPage = () => {
     modalFunction(product);
   });
 
-  amountDiv.appendChild(minusBtn);
-  amountDiv.appendChild(amount);
-  amountDiv.appendChild(plusBtn);
+  amountDiv.append(minusBtn, amount, plusBtn);
   if (container) {
-    container.appendChild(productImg);
-    container.appendChild(productTitle);
-    container.appendChild(productPrice);
-    container.appendChild(productDescription);
-    container.appendChild(amountDiv);
-    container.appendChild(addToCartBtn);
+    container.append(
+      productImg,
+      productTitle,
+      productPrice,
+      productDescription,
+      amountDiv,
+      addToCartBtn
+    );
   }
 };
 HTMLProductPage();

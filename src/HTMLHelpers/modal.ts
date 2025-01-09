@@ -14,9 +14,7 @@ export function modalFunction(product: Product) {
   xIcon.src = "../../assets/icons/x_icon.png";
   xIcon.alt = "x icon";
 
-  modalWrapper?.appendChild(pTag);
-  modalWrapper?.appendChild(aTag);
-  modalWrapper?.appendChild(xIcon);
+  modalWrapper?.append(pTag, aTag, xIcon);
   header?.appendChild(modalWrapper);
 
   setTimeout(() => {
