@@ -36,3 +36,11 @@
     border-radius: 16px;
   }
 }
+@media (max-width: 600px) {
+  #productPageContainer {
+    margin: 100px 0px;
+    .productImg {
+      height: 200px;
+    }
+  }
+}
