@@ -1,0 +1,46 @@
+@mixin font-style {
+  color: white;
+  font-style: italic;
+}
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+
+  .contact {
+    grid-column: 1/2;
+    padding-left: 40px;
+    @include font-style();
+  }
+  ul {
+    grid-column: 1/2;
+    list-style-type: none;
+    @include font-style();
+    li {
+      padding-bottom: 8px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:visited {
+        color: white;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .paymentCards {
+    justify-self: center;
+    img {
+      height: 60px;
+      padding: 10px;
+    }
+  }
+  .webshopName {
+    justify-self: end;
+    padding-right: 40px;
+    @include font-style();
+  }
+}

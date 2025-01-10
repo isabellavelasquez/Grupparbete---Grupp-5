@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "TestFont";
+  src: url("../assets/fonts/testfont_VolkoSans-PosterLight.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  h1,
+  form {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 44px;
+  }
+  h1 {
+    font-family: "TestFont";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
+  }
+  form {
+    margin-top: 20px;
+  }
+  input,
+  button {
+    margin-right: 20px;
+    border-radius: 8px;
+    height: 24px;
+    box-shadow: 3px 3px 7px rgb(120, 118, 118);
+  }
+  .inputStyle {
+    font-style: italic;
+  }
+  .categorys {
+    list-style-type: none;
+    display: flex;
+    background-color: #d7d3d3;
+    height: 50px;
+    font-size: 24px;
+    justify-content: space-around;
+    align-items: center;
+    :hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.backbutton {
+  border: none;
+  top: 80px;
+  left: 60px;
+  height: 60px;
+  width: 60px;
+  position: fixed;
+
+  img {
+    height: 60px;
+    width: 60px;
+    transform: rotate(180deg);
+  }
+}

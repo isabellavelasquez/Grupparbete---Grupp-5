@@ -1,0 +1,37 @@
+#productsInCartContainer {
+    display: flex;
+    flex-direction: column;
+
+    #productInCartContainer {
+        border-bottom: black 1px solid;
+        margin-bottom: 8px;
+
+            #deleteButton {
+                height: 2em;
+                }
+    
+            img {
+                height: 20vh;
+            }
+
+    }
+
+    #checkoutButton {
+        height: 5vh;
+        width: 10vh;
+        margin-left: 50%;
+    }
+  
+}
+
+@media (max-width: 600px)  {
+    #productsInCartContainer {
+        #checkoutButton {
+            margin-left: 40%;
+        }
+
+    }
+    
+}
+
+

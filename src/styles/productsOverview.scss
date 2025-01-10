@@ -1,0 +1,21 @@
+#productsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2vh;
+    justify-content: center;
+  
+    & .productContainer {
+      margin: 2vh;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .productContainer {
+      width: 100%;
+  
+      img {
+        max-height: 50vh;
+      }
+    }
+  }
