@@ -122,29 +122,28 @@ export function createUserCheckoutForm(): HTMLElement {
   submitButton.innerText = "Accept & Pay";
 
   // Appends
-  formUser.appendChild(nameInput);
-  formUser.appendChild(lastNameInput);
-  formUser.appendChild(emailInput);
-  formBilling.appendChild(billingAddressInput);
-  formBilling.appendChild(billingAddressLine2Input);
-  formBilling.appendChild(countryInput);
-  formBilling.appendChild(cityInput);
-  formBilling.appendChild(postAddressInput);
-  formCreditCard.appendChild(ccFirstNameInput);
-  formCreditCard.appendChild(ccLastNameInput);
-  formCreditCard.appendChild(ccNumberInput);
-  formCreditCard.appendChild(ccExpirationDateInput);
-  formCreditCard.appendChild(expirationDateImage);
-  formCreditCard.appendChild(ccCvvInput);
+  formUser.append(nameInput, lastNameInput, emailInput);
+  formBilling.append(
+    billingAddressInput,
+    billingAddressLine2Input,
+    countryInput,
+    cityInput,
+    postAddressInput
+  );
+  formCreditCard.append(
+    ccFirstNameInput,
+    ccLastNameInput,
+    ccNumberInput,
+    ccExpirationDateInput,
+    expirationDateImage,
+    ccCvvInput
+  );
   // Append the forms to the sections
   userField.appendChild(formUser);
   billingField.appendChild(formBilling);
   creditCardDetails.appendChild(formCreditCard);
 
-  section.appendChild(userField);
-  section.appendChild(billingField);
-  section.appendChild(creditCardDetails);
-  section.appendChild(submitButton);
+  section.append(userField, billingField, creditCardDetails, submitButton);
 
   return section;
 }
